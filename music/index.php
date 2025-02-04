@@ -7,21 +7,24 @@
 <html lang="en">
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
   <title>Best Albums Ever</title>
 </head>
 <body>
-  <h1>Best Albums Of All Time</h1>
-  <table>
-    <thead>
-      <tr>
-        <th>Album</th>
-        <th>Artist</th>
-      </tr>
-    </thead>
+  <main>
+    <h1>My Favorite Albums</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Album</th>
+          <th>Artist</th>
+        </tr>
+      </thead>
       <tbody>
         <?php echo getTableData(); ?>
       </tbody>
-  </table>
+    </table>
+  </main>
 </body>
 </html>
 
