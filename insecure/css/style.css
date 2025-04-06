@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+  font-family: "Lato";
+  font-size: 20px;
+  color: white;
+}
+
+body {
+  display: grid;
+  place-content: center;
+  height: 100vh;
+  background-image: url("../img/bg4.jpg");
+}
+
+main {
+  height: 400px;
+  width: 320px;
+}
+
+.header {
+  display: grid;
+  place-content: center;
+}
+h1 { font-size: 24px; }
+
+/* Login section */
+section#login {
+  display: grid;
+  grid-template-rows: 50px 340px;
+  gap: 10px;
+}
+
+#form {
+  display: grid;
+  place-content: center;
+}
+form {
+  display: grid;
+  place-content: center;
+  grid-template-rows: min-content;
+}
+
+.input { padding: 10px; }
+
+label { 
+  display: inline-block;
+  width: 300px;
+  padding-bottom: 5px; 
+  text-align: center;
+}
+
+input {
+  width: 100%;
+  text-indent: 10px;
+  color: black;
+}
+input.text {
+  height: 34px;
+  border-radius: 7px;
+  border: none;
+}
+
+input:focus { outline: none !important; }
+
+.button {
+  height: 30px;
+  text-indent: 0;
+  border-radius: 7px;
+  font-size: 20px;
+  border: none;
+  color: black;
+  cursor: pointer;
+  width: 135px;
+  background-color: white;
+  box-shadow: 0px 4px #636591;
+  margin-top: 30px;
+  text-align: center;
+}
+input#submit {
+  margin-right: 25px;
+  box-shadow: 0px 4px #636591;
+}
+
+/* File section */
+section#access {
+  display: grid;
+  grid-template-rows: 50px 250px;
+  gap: 10px;
+}
+
+#output {
+  display: grid;
+  place-content: center;
+  opacity: 0;
+  animation: fadeIn 5s forwards;
+  animation-delay: 0.5s;
+}
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+table { text-align: center; }
+
+table th { 
+  padding-bottom: 15px; 
+  text-decoration: underline;
+}
+table th.left { width: 150px; }
+table th.right { width: 150px; }
+
+
+.hide {
+  opacity: 0 !important;
+  z-index: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+}
