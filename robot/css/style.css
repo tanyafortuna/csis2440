@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Megrim&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+  font-family: "Tektur";
+  font-size: 20px;
+  color: white;
+}
+
+body {
+  height: 100vh;
+  background-image: url("../img/bg.jpg");
+  display: grid;
+  place-items: center;
+}
+
+main {
+  width: 900px;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, .75);
+  display: grid;
+  grid-template-rows: auto auto;
+  justify-content: center;
+  gap: 50px;
+  padding: 0 50px;
+}
+main section#heading-section {
+  align-self: end;
+  text-align: center;
+  padding: 0 50px;
+}
+
+main h1 { font-size: 54px; }
+main p { font-size: 24px; }
+
+/* Form CSS */
+#columns {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 30px;
+}
+
+label.block {
+  display: block;
+  height: 35px;
+}
+
+select {
+  height: 45px;
+  color: black;
+  padding: 5px 10px;
+  width: 100%;
+  margin-bottom: 23px;
+  border-radius: 10px;
+}
+option { color: black; }
+
+.sizes-div {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.size-div label {
+  padding: 0 6px;
+}
+
+#robot-laws-div {
+  height: calc(100% - 35px);
+  display: grid;
+  align-content: space-between;
+}
+
+.laws-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+}
+.laws-checkbox-div {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+}
+
+span.laws { text-decoration: underline; }
+label.indented {
+  padding-left: 24px;
+  font-size: 18px;
+  text-align: justify;
+}
+
+#submit-div {
+  grid-area: 2 / span 2;
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+#submit {
+  height: 46px;
+  width: 170px;
+  cursor: pointer;
+  color: black;
+  /* background-color: gainsboro; */
+  background-color: white;
+  opacity: .80;
+  border-radius: 25px;
+  box-shadow: 0 6px 6px grey;
+  border: none;
+  transition: opacity .25s ease-in-out, font-size .25s ease-in-out;
+}
+#submit:hover:enabled {
+  font-size: 22px;
+  opacity: 1;
+}
+#submit:active:enabled {
+  box-shadow: 0 4px 4px grey;
+  transform: translateY(2px);
+  opacity: 1;
+}
+#submit:disabled {
+  cursor: not-allowed;
+  background-image: url("../img/disabled.jpg");
+  box-shadow: none;
+}
+
+/* Results CSS */
+#order-number {
+  margin-bottom: 25px;
+}
+#results-section .indented {
+  margin-bottom: 5px;
+  padding: 5px 50px 25px 50px;
+}
+#to-string-div {
+  text-align: justify;
+  display: grid;
+  grid-template-columns: auto 125px;
+}
+#robot-img {
+  border-radius: 50%;
+  height: 125px;
+  width: 125px;
+  margin-top: 5px;
+}
