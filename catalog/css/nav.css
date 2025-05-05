@@ -1,0 +1,70 @@
+/* Promo line */
+#nav-promo {
+  height: 40px;
+  background-color: #F2274C;
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+#promo-reviews, #promo-shipping {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  padding: 0 30px;
+}
+#promo-reviews span {
+  padding: 0 5px;
+}
+#promo-shipping p {
+  display: inline-block;
+  width: 100%;
+  text-align: end;
+}
+#promo-reviews span, #promo-shipping p {
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+#nav-promo .icon {
+  height: 20px;
+}
+
+/* Logo line */
+#nav-logo {
+  height: 110px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  background-color: #ECE9DC;
+}
+#nav-logo-img {
+  text-align: center;
+  height: 110px;
+}
+#nav-logo-img img {
+  height: 110px;
+}
+#nav-icons {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 50px;
+}
+#nav-icons .icon {
+  height: 42px;
+}
+
+/* Links line */
+#nav-links {
+  height: 40px;
+  background-color: #0D0D0D;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#nav-links a {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  padding: 0 40px;
+  letter-spacing: 1px;
+  font-size: 24px;
+}

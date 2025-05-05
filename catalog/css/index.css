@@ -1,0 +1,104 @@
+/*                */
+/* Banner section */
+/*                */
+section#banner {
+  background-color: #ECE9DC;
+  position: relative;
+  display: grid;
+  align-items: center;
+}
+
+#acme-hq-banner-container {
+  display: grid;
+  justify-content: center;
+  width: max-content;
+}
+#acme-hq-banner {
+  /* width: max(100vw, 1250px); */
+  width: 100vw;
+  max-height: min(650px, calc(100vh - 190px));
+}
+
+#quality-products, #shop-now-a {
+  position: absolute;
+  letter-spacing: 2px;
+  color: white;
+}
+
+#quality-products {
+  right: 50px;
+  top: 50px;
+  font-size: 42px;
+  text-align: end;
+}
+
+#shop-now-a {
+  display: inline-block;
+  height: 58px;
+  left: 50px;
+  bottom: 50px;
+  font-size: 30px;
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid white;
+  display: grid;
+  place-items: center;
+}
+#shop-now-p { 
+  font-size: 30px;
+  padding: 0 20px;
+}
+
+/*                  */
+/* Trending section */
+/*                  */
+section#trending {
+  background-color: #ECE9DC;
+  letter-spacing: 1px;
+  padding: 35px;
+}
+section#trending h1 {
+  font-size: 36px;
+  text-align: center;
+  margin: 25px;
+}
+#trending-products {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  width: 880px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+#shop-all {
+  color: black;
+  text-decoration: none;
+}
+#trending .icon {
+  height: 32px;
+  margin-left: 5px;
+  padding-top: 3px;
+}
+
+/*                 */
+/* Reasons section */
+/*                 */
+section#reasons {
+  background-color: #ECE9DC;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  justify-content: space-evenly;
+  padding: 60px 50px 25px 50px;
+}
+section#reasons .reason {
+  width: 200px;
+  text-align: center;
+}
+section#reasons h1 {
+  font-size: 24px;
+  margin-bottom: 25px;
+}
+section#reasons p {
+  letter-spacing: 1px;
+  font-size: 18px;
+}
+

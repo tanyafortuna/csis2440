@@ -1,0 +1,31 @@
+<?php
+  echo '<nav>';
+  echo '<div id="nav-outer">';
+  echo '<div id="nav-promo">';
+  echo '<div id="promo-reviews">';
+  echo '<img class="icon" src="img/icons/star-full-white.png">';
+  echo '<span>1000+ 5-STAR REVIEWS</span>';
+  echo '<img class="icon" src="img/icons/star-full-white.png">';
+  echo '</div>';
+  echo '<div id="promo-shipping">';
+  echo '<p>FREE SHIPPING ON ORDERS $999+</p>';
+  echo '</div>';
+  echo '</div>';
+  echo '<div id="nav-logo">';
+  echo '<div class="blank-on-purpose"></div>';
+  echo '<div id="nav-logo-img">';
+  echo '<img src="img/logo-rct-tan.jpg">';
+  echo '</div>';
+  echo '<div id="nav-icons">';
+  echo '<img class="icon" src="img/icons/logged-out.png">';
+  echo '</div>';
+  echo '</div>';
+  echo '<div id="nav-links">';
+  echo '<a href=".">SHOP</a>';
+  echo '<a href=".">NEW ARRIVALS</a>';
+  echo '<a href=".">ABOUT US</a>';
+  echo '<a href=".">CONTACT US</a>';
+  echo '</div>';
+  echo '</div>';
+  echo '</nav>';
+?>

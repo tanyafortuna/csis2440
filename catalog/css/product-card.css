@@ -1,0 +1,23 @@
+.product-card {
+  width: 200px;
+  margin: 0 5px 0 5px;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: white;
+  color: black;
+  text-decoration: none;
+  transition: transform .1s;
+}
+.product-card:hover {
+  transform: scale(1.07);
+}
+
+.product-img img {
+  height: 180px;
+  width: 180px;
+  border-radius: 10px;
+}
+.product-price {
+  margin-top: 10px;
+  font-size: 16px;
+}

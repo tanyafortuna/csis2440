@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Voltaire&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+  font-family: "Voltaire";
+  font-size: 20px;
+  scroll-behavior: smooth;
+  
+}
+
+section#highlighted {
+  background-color: #ECE9DC;
+  padding-top: 35px;
+  padding-bottom: 15px;
+}
+section#highlighted h1 {
+  font-size: 36px;
+  text-align: center;
+}
+div#highlighted-product {
+  position: relative;
+  height: 710px;
+  width: 1300px;
+  margin: 0 auto;
+}
+
+img#newspaper {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 520px;
+  border-radius: 20px;
+}
+img#iron-carrot-ad {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 20px;
+}
+p#iron-carrot-blurb {
+  position: absolute;
+  /* right: 40px; */
+  right: 0;
+  top: 55px;
+  font-size: 22px;
+  /* width: 680px; */
+  width: 720px;
+  text-align: justify;
+}
+p#iron-carrot-blurb span {
+  text-decoration: underline;
+  font-size: 26px;
+}
+p#iron-carrot-tagline {
+  position: absolute;
+  left: 510px;
+  top: 340px;
+  height: 90px;
+  width: 280px;
+  padding: 10px;
+  font-size: 34px;
+  text-align: center;
+}
+p#review-1, p#review-2 {
+  position: absolute;
+  left: 540px;
+  width: 220px;
+  text-align: center;
+}
+p#review-1 { top: 475px; }
+p#review-2 { top: 575px; }
+
+.buy-now {
+  position: absolute;
+  left: 850px;
+  top: 260px;
+  height: 50px;
+  width: 140px;
+  background-color: #F2274C;
+  padding: 8px 23px;
+  border-radius: 15px;
+  color: white;
+  text-decoration: none;
+  transition: all .15s;
+  box-shadow: 0 4px 4px grey;
+}
+.buy-now:hover {
+  transform: scale(1.2);
+}
+.buy-now:active {
+  box-shadow: none;
+  transform: scale(1.2) translateY(4px);
+}
+.buy-now p {
+  font-size: 28px;
+}
+
+
+
+
+
+footer {
+  background-color: #0D0D0D;
+  height: 150px;
+}
