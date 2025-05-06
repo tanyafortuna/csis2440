@@ -10,6 +10,7 @@
   <title>ACME Corporation</title>
 </head>
   <?php 
+    include_once("includes/product-card.php");
     include_once("includes/nav.php"); 
     echo '<main>';
     include_once("includes/banner.php");

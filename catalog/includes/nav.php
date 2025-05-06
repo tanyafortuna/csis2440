@@ -21,10 +21,10 @@
   echo '</div>';
   echo '</div>';
   echo '<div id="nav-links">';
-  echo '<a href=".">SHOP</a>';
-  echo '<a href=".">NEW ARRIVALS</a>';
-  echo '<a href=".">ABOUT US</a>';
-  echo '<a href=".">CONTACT US</a>';
+  echo '<a href="catalog.php">SHOP</a>';
+  echo '<a href="new-arrivals.php">NEW ARRIVALS</a>';
+  echo '<a href="about.php">ABOUT US</a>';
+  echo '<a href="contact.php">CONTACT US</a>';
   echo '</div>';
   echo '</div>';
   echo '</nav>';

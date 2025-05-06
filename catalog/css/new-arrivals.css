@@ -1,0 +1,55 @@
+/*                      */
+/* New arrivals section */
+/*                      */
+section#new-arrivals {
+  background-color: #ECE9DC;
+  letter-spacing: 1px;
+  padding: 35px;
+}
+section#new-arrivals h1 {
+  font-size: 36px;
+  text-align: center;
+  margin: 25px;
+}
+#new-arrivals-blurb {
+  width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#new-products {
+  display: flex;
+  row-gap: 25px;
+  column-gap: 15px;
+  width: 85vw;
+  height: calc(100vh - 580px);
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+#new-products a { animation: drop-in 1s; }
+#new-products a:nth-child(1) { animation-delay: 200ms; }
+#new-products a:nth-child(3) { animation-delay: 100ms; }
+#new-products a:nth-child(4) { animation-delay: 300ms; }
+
+@keyframes drop-in {
+  0% {
+    transform: translateY(0%);
+  }
+  10% {
+    transform: translateY(-10%);
+  }
+  25% {
+    transform: translateY(8%);
+  }
+  50% {
+    transform: translateY(-6%);
+  }
+  75% {
+    transform: translateY(3%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
