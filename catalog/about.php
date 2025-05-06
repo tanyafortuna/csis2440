@@ -23,7 +23,7 @@
             Since 1935, ACME Corporation has proudly stood at the chaotic intersection of innovation, imagination, and questionable safety standards. With a legacy built on rocket skates, anvils, portable holes, and just enough legal ambiguity to keep things interesting, we've become the go-to supplier for animated professionals with big dreams and bigger explosions.
           </p>
           <p class="about-blurb">
-            At ACME, we believe that every problem—no matter how cartoonishly complex—has a solution. Whether you're constructing an elaborate trap, launching a high-speed pursuit, or simply in need of a spring-loaded surprise, our expansive catalog offers tools for every scenario...and some that defy classification entirely.
+            At ACME, we believe that every problem — no matter how cartoonishly complex — has a solution. Whether you're constructing an elaborate trap, launching a high-speed pursuit, or simply in need of a spring-loaded surprise, our expansive catalog offers tools for every scenario...and some that defy classification entirely.
           </p>
           <p class="about-blurb">
             Our commitment to quality is unmatched in the industry. Each product undergoes rigorous semi-controlled testing, often in the wild, and always with dramatic results. We're not just a brand — we're a legacy of animated ingenuity, trusted by coyotes, cats, ducks, and the occasional rabbit for nearly a century.
