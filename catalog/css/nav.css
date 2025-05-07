@@ -1,7 +1,8 @@
 /* Promo line */
 #nav-promo {
   height: 40px;
-  background-color: #F2274C;
+  /* background-color: #F2274C; */
+  background-color: #F22233;
   color: white;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -66,5 +67,5 @@
   text-decoration: none;
   padding: 0 40px;
   letter-spacing: 1px;
-  font-size: 24px;
+  font-size: 22px;
 }

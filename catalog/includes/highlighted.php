@@ -10,9 +10,9 @@
   echo '<p id="iron-carrot-blurb">';
   echo '<span>Introducing the Iron Carrot</span>™ — ACME Corporation\'s latest breakthrough in high-performance produce-inspired tech. Engineered for speed, impact, and questionable practicality, this sleek, carrot-shaped innovation is already turning heads (and breaking windows) across the country. Whether you\'re chasing, fleeing, or just want to make an impression at the local canyon edge, the Iron Carrot delivers unstoppable reliability with signature ACME style. Limited quantities available — get yours today!';
   echo '</p>';
-  echo '<a class="buy-now" href="product.php?id=13">';
-  echo '<p>BUY NOW</p>';
-  echo '</a>';
+  echo '<div id="buy-now" class="button-container">';
+  echo '<a href="product.php?id=13">BUY NOW</a>';
+  echo '</div>';
   echo '</div>';
   echo '</section>';
 ?>

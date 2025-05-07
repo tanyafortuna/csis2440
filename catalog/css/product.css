@@ -88,24 +88,3 @@ section#product {
   height: 36px;
   padding-top: 9px;
 }
-
-#add-to-cart a {
-  display: inline-block;
-  height: 46px;
-  width: 260px;
-  background-color: #F2274C;
-  padding: 11px 0;
-  text-align: center;
-  border-radius: 10px;
-  color: white;
-  text-decoration: none;
-  transition: all .15s;
-  box-shadow: 0 4px 4px grey;
-}
-#add-to-cart a:hover {
-  transform: scale(1.05);
-}
-#add-to-cart a:active {
-  box-shadow: none;
-  transform: scale(1.05) translateY(4px);
-}

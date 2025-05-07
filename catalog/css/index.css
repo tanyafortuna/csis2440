@@ -111,29 +111,11 @@ p#review-1, p#review-2 {
 p#review-1 { top: 475px; }
 p#review-2 { top: 575px; }
 
-.buy-now {
+#buy-now {
   position: absolute;
-  left: 850px;
+  right: 0;
   top: 260px;
-  height: 50px;
-  width: 140px;
-  background-color: #F2274C;
-  padding: 8px 23px;
-  border-radius: 15px;
-  color: white;
-  text-decoration: none;
-  transition: all .15s;
-  box-shadow: 0 4px 4px grey;
-}
-.buy-now:hover {
-  transform: scale(1.2);
-}
-.buy-now:active {
-  box-shadow: none;
-  transform: scale(1.2) translateY(4px);
-}
-.buy-now p {
-  font-size: 28px;
+  width: 720px;
 }
 
 /*                  */

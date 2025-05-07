@@ -14,7 +14,7 @@
   echo '<div id="nav-logo">';
   echo '<div class="blank-on-purpose"></div>';
   echo '<div id="nav-logo-img">';
-  echo '<img src="img/logo-rct-tan.jpg">';
+  echo '<a href="."><img src="img/logo-rct-tan.jpg"></a>';
   echo '</div>';
   echo '<div id="nav-icons">';
   echo '<img class="icon" src="img/icons/logged-out.png">';

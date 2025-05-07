@@ -4,6 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="css/nav.css">
+  <link rel="stylesheet" type="text/css" href="css/button.css">
   <link rel="stylesheet" type="text/css" href="css/product.css">
   <script src="js/script.js" defer></script>
   <title>ACME Corporation</title>
@@ -44,7 +45,7 @@
                 </div>
               </div>
             </div>
-            <div id="add-to-cart">
+            <div class="button-container" id="add-to-cart">
               <a href="#">ADD TO CART</a>
             </div>
           </div>

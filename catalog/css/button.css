@@ -1,0 +1,25 @@
+/*            */
+/* Button css */
+/*            */
+.button-container, input.button { text-align: center; }
+.button-container a, input.button {
+  display: inline-block;
+  height: 46px;
+  width: 260px;
+  background-color: #F22233;
+  border-width: 0px;
+  padding: 11px 0;
+  text-align: center;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+  transition: all .15s;
+  box-shadow: 0 4px 4px grey;
+}
+.button-container a:hover, input.button:hover {
+  transform: scale(1.05);
+}
+.button-container a:active, input.button:active {
+  box-shadow: none;
+  transform: scale(1.05) translateY(4px);
+}

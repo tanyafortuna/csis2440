@@ -14,8 +14,9 @@
   ?>
   <main>
     <section id="login">
-      <h1>INSIDER ACCESS STARTS HERE</h1>
-      <p class="login-blurb">Create an account to quickly place orders and stay ready for whatever your next plan demands.</p> 
+      <h1>WELCOME BACK, ACME INSIDER</h1>
+      <p class="login-blurb">Sign in to place new orders, review past purchases, and stay one step ahead of the mayhem.</p> 
+      <!-- save your favorite inventions, -->
 
       <div id="login-form">
         <form method="post">
@@ -27,20 +28,16 @@
           <div class="input">
             <label for="password">Password:</label>
             <input type="password" name="password" id="password" class="field">
-            <p class="error-container"></p>
-          </div>
-          <div class="input">
-            <label for="password2">Confirm password:</label>
-            <input type="password" name="password2" id="password2" class="field">
             <p class="error-container" id="error-password"></p>
           </div>
           <div class="input">
-            <input type="submit" id="submit" class="button" name="submit" value="SIGN UP">
+            <input type="submit" id="submit" class="button" name="submit" value="SIGN IN">
           </div>
+          <!-- <input type="hidden" name="num_tries" value="'.$num_tries.'"> -->
         </form>
       </div>
 
-      <p class="login-blurb short">Have an account? <a href="login.php">Sign in</a></p> 
+      <p class="login-blurb short">Need an account? <a href="create-account.php">Sign up now</a></p> 
     </section>
   </main>
   
