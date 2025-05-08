@@ -47,10 +47,44 @@
 #nav-icons {
   display: flex;
   justify-content: flex-end;
-  padding-right: 50px;
+  padding-right: 75px;
 }
 #nav-icons .icon {
   height: 42px;
+}
+
+/* Tooltips */
+.tooltip-container {
+  position: relative;
+  text-align: center;
+  margin-left: 20px;
+}
+.tooltip {
+  visibility: hidden;
+  position: absolute;
+  z-index: 1;
+  top: 90%;
+  left: 50%;
+  padding: 5px 0;
+  border-radius: 6px;
+  background-color: white;
+  color: black;
+  text-align: center;
+  font-size: 16px;
+}
+.tooltip-container:hover .tooltip { visibility: visible; }
+
+#login-icon .tooltip { 
+  width: 100px; 
+  margin-left: -50px;
+}
+#account-icon .tooltip { 
+  width: 66px; 
+  margin-left: -33px;
+}
+#logout-icon .tooltip { 
+  width: 60px; 
+  margin-left: -30px;
 }
 
 /* Links line */

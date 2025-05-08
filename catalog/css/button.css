@@ -16,10 +16,16 @@
   transition: all .15s;
   box-shadow: 0 4px 4px grey;
 }
-.button-container a:hover, input.button:hover {
+.button-container a:hover:enabled, input.button:hover:enabled {
   transform: scale(1.05);
 }
-.button-container a:active, input.button:active {
+.button-container a:active:enabled, input.button:active:enabled {
   box-shadow: none;
   transform: scale(1.05) translateY(4px);
+}
+input.button:disabled {
+  cursor: not-allowed;
+  background-color: #d1caaa;
+  color: black;
+  box-shadow: none;
 }

@@ -1,3 +1,17 @@
+<?php
+  session_start();
+  include_once('includes/db.php');
+  include_once('includes/functions.php');
+
+  // error reporting
+  if ($_SERVER['HTTP_HOST'] == 'localhost')
+  {
+    error_reporting(-1);
+    ini_set( 'display_errors', 1 );
+  }
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

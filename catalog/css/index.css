@@ -134,7 +134,7 @@ section#trending h1 {
 #trending-products {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  width: 880px;
+  width: 970px;
   margin: 0 auto;
   margin-bottom: 50px;
 }

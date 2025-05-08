@@ -1,3 +1,17 @@
+<?php
+  session_start();
+  include_once('includes/db.php');
+  include_once('includes/functions.php');
+
+  // error reporting
+  if ($_SERVER['HTTP_HOST'] == 'localhost')
+  {
+    error_reporting(-1);
+    ini_set( 'display_errors', 1 );
+  }
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,10 +28,10 @@
     include_once("includes/product-card.php");
     include_once("includes/nav.php"); 
     echo '<main>';
-    include_once("includes/banner.php");
-    include_once("includes/reasons.php");
-    include_once("includes/highlighted.php");
-    include_once("includes/trending.php");
+    include_once("includes/index/banner.php");
+    include_once("includes/index/reasons.php");
+    include_once("includes/index/highlighted.php");
+    include_once("includes/index/trending.php");
     echo '</main>';
   ?>
 

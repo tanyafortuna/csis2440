@@ -1,3 +1,33 @@
+<?php
+  session_start();
+  include_once('includes/db.php');
+  include_once('includes/functions.php');
+  if (isGranted()) header('location: .');
+
+  // error reporting
+  if ($_SERVER['HTTP_HOST'] == 'localhost')
+  {
+    error_reporting(-1);
+    ini_set( 'display_errors', 1 );
+  }
+
+  // set $acctExists and $acctCreated boolean variables
+  if (!isset($_POST['submit'])) { 
+    $acctExists = false; 
+    $acctCreated = false;
+  }
+  else if (isset($_POST['submit']) && checkIfUsernameExists()) {
+    $acctExists = true;
+    $acctCreated = false;
+  }
+  else if (isset($_POST['submit']) && !checkIfUsernameExists()) {
+    $acctExists = false;
+    createAccount();
+    $acctCreated = true;
+  }
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,33 +44,10 @@
   ?>
   <main>
     <section id="login">
-      <h1>INSIDER ACCESS STARTS HERE</h1>
-      <p class="login-blurb">Create an account to quickly place orders and stay ready for whatever your next plan demands.</p> 
-
-      <div id="login-form">
-        <form method="post">
-          <div class="input">
-            <label for="username">Username:</label>
-            <input type="text" name="username" id="username" class="field">
-            <p class="error-container" id="error-username"></p>
-          </div>
-          <div class="input">
-            <label for="password">Password:</label>
-            <input type="password" name="password" id="password" class="field">
-            <p class="error-container"></p>
-          </div>
-          <div class="input">
-            <label for="password2">Confirm password:</label>
-            <input type="password" name="password2" id="password2" class="field">
-            <p class="error-container" id="error-password"></p>
-          </div>
-          <div class="input">
-            <input type="submit" id="submit" class="button" name="submit" value="SIGN UP">
-          </div>
-        </form>
-      </div>
-
-      <p class="login-blurb short">Have an account? <a href="login.php">Sign in</a></p> 
+      <?php
+        if ($acctCreated) { displaySuccess(); }
+        else { displayForm($acctExists); }
+      ?>
     </section>
   </main>
   
@@ -54,3 +61,65 @@
   
 </body>
 </html>
+
+
+<!-- Output-printing functions -->
+<?php
+  function displayForm($acctExists) {
+    echo '<h1>INSIDER ACCESS STARTS HERE</h1>';
+    echo '<p class="login-blurb">Create an account to quickly place orders and stay ready for whatever your next plan demands.</p>';
+    echo '<div id="login-form">';
+    echo '<form id="create-account-form" method="post">';
+
+    // Username field
+    echo '<div class="input">';
+    echo '<label for="username">Username:</label>';
+    echo '<input type="text" name="username" id="username" class="field" maxlength="20"';
+    if (isset($_POST['submit'])) echo ' value="'.$_POST["username"].'"';
+    echo '>';
+    echo '<img class="clear-icon" src="img/icons/clear.png" onclick="clearField(\'username\');">';
+    echo '<p class="error-container" id="error-username">';
+    if ($acctExists) echo 'Account already exists. Please log in.';
+    echo '</p>';
+    echo '</div>';
+    // Password field 1
+    echo '<div class="input">';
+    echo '<label for="password">Password:</label>';
+    echo '<input type="password" name="password" id="password" class="field" maxlength="30"';
+    if (isset($_POST['submit'])) echo ' value="'.$_POST["password"].'"';
+    echo '>';
+    echo '<img class="clear-icon" src="img/icons/clear.png" onclick="clearField(\'password\');">';
+    echo '<p class="error-container" id="error-password"></p>';
+    echo '</div>';
+    // Password field 2
+    echo '<div class="input">';
+    echo '<label for="password2">Confirm password:</label>';
+    echo '<input type="password" name="password2" id="password2" class="field" maxlength="30"';
+    if (isset($_POST['submit'])) echo ' value="'.$_POST["password2"].'"';
+    echo '>';
+    echo '<img class="clear-icon" src="img/icons/clear.png" onclick="clearField(\'password2\');">';
+    echo '<p class="error-container" id="error-password2"></p>';
+    echo '</div>';
+    // Submit button
+    echo '<div class="input">';
+    echo '<input type="submit" id="submit" class="button" name="submit" value="SIGN UP" disabled>';
+    echo '</div>';
+
+    echo '</form>';
+    echo '</div>';
+    echo '<p class="login-blurb short">Have an account? <a href="login.php">Sign in</a></p>';
+  }
+
+  function displaySuccess() {
+    echo '<h1>WELCOME ABOARD, ACME INSIDER</h1>';
+    echo '<p class="login-blurb">You\'re now part of the ACME family. Big plans? Odd gadgets? Everything you need is just a click away.</p>';
+    echo '<a id="shop-all" href="catalog.php">';
+    echo '<h1>SHOP NOW<img class="icon" src="img/icons/arrow-right.png"></h1>';
+    echo '</a>';
+    echo '<div id="ads">';
+    echo '<a class="ad-link" href="product.php?id=13"><img class="ad-img" src="img/ad-iron-carrot.webp"></a>';
+    echo '<a class="ad-link" href="product.php?id=14"><img class="ad-img" src="img/ad-unicycle.jpg"></a>';
+    echo '<a class="ad-link" href="product.php?id=12"><img class="ad-img" src="img/ad-instant-girl.webp"></a>';
+    echo '</div>';
+  }
+?>
