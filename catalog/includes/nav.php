@@ -31,6 +31,23 @@
     echo '</a>';
   }
   else {
+    // Cart icon
+    if (isset($_SESSION['cart']) && array_sum(array_column($_SESSION['cart'],'qty')) > 0) {
+      echo '<a href="cart.php">';
+      echo '<div id="cart-icon" class="tooltip-container">';
+      echo '<img class="icon" src="img/icons/cart-full.png">';
+      echo '<span class="tooltip">Cart</span>';
+      echo '</div>';
+      echo '</a>';
+    }
+    else {
+      echo '<a href="cart.php">';
+      echo '<div id="cart-icon" class="tooltip-container">';
+      echo '<img class="icon" src="img/icons/cart.png">';
+      echo '<span class="tooltip">Cart</span>';
+      echo '</div>';
+      echo '</a>';
+    }
     // Account icon
     echo '<a href="account.php">';
     echo '<div id="account-icon" class="tooltip-container">';

@@ -78,6 +78,10 @@
   width: 100px; 
   margin-left: -50px;
 }
+#cart-icon .tooltip { 
+  width: 42px; 
+  margin-left: -21px;
+}
 #account-icon .tooltip { 
   width: 66px; 
   margin-left: -33px;
