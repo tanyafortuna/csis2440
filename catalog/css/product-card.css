@@ -1,6 +1,6 @@
 .product-card {
   width: 200px;
-  height: 260px;
+  height: 285px;
   margin: 0 5px 0 5px;
   padding: 10px;
   border-radius: 15px;
@@ -17,6 +17,9 @@
   height: 180px;
   width: 180px;
   border-radius: 10px;
+}
+.product-name {
+  height: 50px;
 }
 .product-price {
   margin-top: 10px;
