@@ -83,3 +83,17 @@ section#cart h1 {
   color: #F22233;
   font-size: 14px;
 }
+
+/*            */
+/* Empty cart */
+/*            */
+#cart-detail {
+  width: 1000px;
+  margin: 40px auto;
+}
+p.cart-blurb {
+  width: 650px;
+  margin: 30px auto 0 auto;
+  text-align: center;
+  padding-bottom: 15px;
+}
