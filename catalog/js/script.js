@@ -2,6 +2,13 @@ function clearField(id) {
   document.getElementById(id).value = "";
 }
 
+function updateProductPageQty(up) {
+  qtyDiv = document.getElementById("qty-count");
+  qty = parseInt(qtyDiv.innerText);
+  if (up) qtyDiv.innerText = qty + 1;
+  else if (qty > 1) qtyDiv.innerText = qty - 1;
+}
+
 // Listeners for form fields on create account page
 let un = document.getElementById("username");
 let pw = document.getElementById("password");

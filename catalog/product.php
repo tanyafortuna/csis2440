@@ -48,13 +48,13 @@
             <div id="qty-selector">
               <p id="qty">Qty:</p>
               <div id="qty-minus-plus">
-                <div id="qty-minus">
+                <div id="qty-minus" onclick="updateProductPageQty(false);">
                   <img class="icon" src="img/icons/minus.png">
                 </div>
                 <div id="qty-count">
                   1
                 </div>
-                <div id="qty-plus">
+                <div id="qty-plus" onclick="updateProductPageQty(true);">
                   <img class="icon" src="img/icons/plus.png">
                 </div>
               </div>
