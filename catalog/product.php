@@ -3,12 +3,18 @@
   include_once('includes/db.php');
   include_once('includes/functions.php');
 
+  if (!isset($_GET['id']) || $_GET['id'] < 1 || $_GET['id'] > 20) 
+    header('location: .');
+
   // error reporting
   if ($_SERVER['HTTP_HOST'] == 'localhost')
   {
     error_reporting(-1);
     ini_set( 'display_errors', 1 );
   }
+
+  // product info
+  $product = getProductFromDB($_GET['id']);
 ?>
 
 
@@ -32,18 +38,16 @@
     <section id="product">
       <div id="product-detail">
         <div class="left-side">
-          <img id="product-img" src="img/product-images/13.jpg">
+          <img id="product-img" src="<?php echo $product['image']; ?>">
         </div>    
         <div class="right-side">
-          <h1 class="name">IRON CARROT</h1>
+          <h1 class="name"><?php echo strtoupper($product['name']); ?></h1>
           <p class="reviews-count">
             <img class="icon" src="img/icons/star-full.png"><img class="icon" src="img/icons/star-full.png"><img class="icon" src="img/icons/star-full.png"><img class="icon" src="img/icons/star-full.png"><img class="icon" src="img/icons/star-full.png">
             23 Reviews
           </p>
-          <p class="price">$38.99</p>
-          <p id="product-blurb">
-            ACME Corporation's latest breakthrough in high-performance produce-inspired tech. <BR><BR>Engineered for speed, impact, and questionable practicality, this sleek, carrot-shaped innovation is already turning heads (and breaking windows) across the country. <BR><BR>Whether you're chasing, fleeing, or just want to make an impression at the local canyon edge, the Iron Carrot delivers unstoppable reliability with signature ACME style.<br><br>Limited quantities available — get yours today!
-          </p>
+          <p class="price">$<?php echo number_format($product['price'], 2); ?></p>
+          <p id="product-blurb"><?php echo $product['description']; ?></p>
           <div id="qty-and-cart">
             <div id="qty-selector">
               <p id="qty">Qty:</p>

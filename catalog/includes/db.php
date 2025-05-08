@@ -99,4 +99,24 @@
     $_SESSION['granted'] = true;
   }
 
+  function getProductFromDB($id) {
+    // get connection
+    $conn = connectToDB();
+
+    // create and run command
+    $sql = "SELECT * FROM products WHERE id = ?;";
+    $statement = $conn->prepare($sql);
+    $statement->bind_param("i", $id);
+    $statement->execute();
+
+    // get result
+    $result = $statement->get_result();
+
+    // close connection
+    $statement->close();
+    $conn->close();
+
+    // return result
+    return $result->fetch_assoc();
+  }
   ?>
