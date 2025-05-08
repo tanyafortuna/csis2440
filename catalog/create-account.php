@@ -35,6 +35,7 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="css/nav.css">
   <link rel="stylesheet" type="text/css" href="css/button.css">
+  <link rel="stylesheet" type="text/css" href="css/ads.css">
   <link rel="stylesheet" type="text/css" href="css/login.css">
   <script src="js/script.js" defer></script>
   <title>ACME Corporation</title>
@@ -65,6 +66,12 @@
 
 <!-- Output-printing functions -->
 <?php
+  function displaySuccess() {
+    echo '<h1>WELCOME ABOARD, ACME INSIDER</h1>';
+    echo '<p class="login-blurb">You\'re now part of the ACME family. Big plans? Odd gadgets? Everything you need is just a click away.</p>';
+    include_once("includes/ads.php");
+  }
+
   function displayForm($acctExists) {
     echo '<h1>INSIDER ACCESS STARTS HERE</h1>';
     echo '<p class="login-blurb">Create an account to quickly place orders and stay ready for whatever your next plan demands.</p>';
@@ -108,18 +115,5 @@
     echo '</form>';
     echo '</div>';
     echo '<p class="login-blurb short">Have an account? <a href="login.php">Sign in</a></p>';
-  }
-
-  function displaySuccess() {
-    echo '<h1>WELCOME ABOARD, ACME INSIDER</h1>';
-    echo '<p class="login-blurb">You\'re now part of the ACME family. Big plans? Odd gadgets? Everything you need is just a click away.</p>';
-    echo '<a id="shop-all" href="catalog.php">';
-    echo '<h1>SHOP NOW<img class="icon" src="img/icons/arrow-right.png"></h1>';
-    echo '</a>';
-    echo '<div id="ads">';
-    echo '<a class="ad-link" href="product.php?id=13"><img class="ad-img" src="img/ad-iron-carrot.webp"></a>';
-    echo '<a class="ad-link" href="product.php?id=14"><img class="ad-img" src="img/ad-unicycle.jpg"></a>';
-    echo '<a class="ad-link" href="product.php?id=12"><img class="ad-img" src="img/ad-instant-girl.webp"></a>';
-    echo '</div>';
   }
 ?>

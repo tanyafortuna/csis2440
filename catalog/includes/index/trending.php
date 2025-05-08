@@ -7,8 +7,5 @@
   echo generateProductCard(5, "Bird Seed", 9.99);
   echo generateProductCard(15, "Out-Board Motor", 999.99);
   echo '</div>';
-  echo '<a id="shop-all" href="catalog.php">';
-  echo '<h1>SHOP ALL<img class="icon" src="img/icons/arrow-right.png"></h1>';
-  echo '</a>';
   echo '</section>';
 ?>

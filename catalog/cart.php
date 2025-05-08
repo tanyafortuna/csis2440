@@ -19,6 +19,7 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="css/nav.css">
   <link rel="stylesheet" type="text/css" href="css/button.css">
+  <link rel="stylesheet" type="text/css" href="css/ads.css">
   <link rel="stylesheet" type="text/css" href="css/cart.css">
   <script src="js/script.js" defer></script>
   <title>ACME Corporation</title>
@@ -57,6 +58,7 @@
     echo '<div id="cart-empty">';
     echo '<p class="cart-blurb">No gadgets, gizmos, or gravity-defying gear—yet. Your cart\'s just waiting for a touch of ACME brilliance (or chaos) to get rolling. Browse our lineup of clever, curious, and questionably safe contraptions to spark your next big idea.</p>';
     echo '</div>';
+    include_once("includes/ads.php");
   }
 
   function printCartContents() {

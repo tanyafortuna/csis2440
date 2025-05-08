@@ -19,6 +19,7 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="css/nav.css">
   <link rel="stylesheet" type="text/css" href="css/button.css">
+  <link rel="stylesheet" type="text/css" href="css/ads.css">
   <link rel="stylesheet" type="text/css" href="css/index.css">
   <link rel="stylesheet" type="text/css" href="css/product-card.css">
   <script src="js/script.js" defer></script>
@@ -32,6 +33,7 @@
     include_once("includes/index/reasons.php");
     include_once("includes/index/highlighted.php");
     include_once("includes/index/trending.php");
+    include_once("includes/ads.php");
     echo '</main>';
   ?>
 

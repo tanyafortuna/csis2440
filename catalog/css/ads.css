@@ -1,0 +1,36 @@
+/*             */
+/* Ads section */
+/*             */
+section#ads {
+  background-color: #ECE9DC;
+  padding-bottom: 15px;
+}
+section#ads h1 {
+  font-size: 36px;
+  text-align: center;
+}
+#shop-all {
+  display: block;
+  margin: 0 auto;
+  color: black;
+  text-decoration: none;
+  margin-bottom: 35px;
+}
+#shop-all .icon {
+  height: 32px;
+  margin-left: 5px;
+  padding-top: 3px;
+}
+#ads-images {
+  width: 820px;
+  margin: 35px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 35px;
+}
+#ads .ad-img {
+  height: 300px;
+  width: 250px;
+  border-radius: 20px;
+  border: 2px dashed black;
+}
