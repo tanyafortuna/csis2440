@@ -10,25 +10,19 @@ function updateProductPageQty(up) {
 }
 
 // Listeners for form fields on create account page
-let un = document.getElementById("username");
-let pw = document.getElementById("password");
-let pw2 = document.getElementById("password2");
+if (window.location.href.includes("create-account.php")) {
+  var un = document.forms["create-account-form"].elements["username"];
+  var pw = document.forms["create-account-form"].elements["password"];
+  var pw2 = document.forms["create-account-form"].elements["password2"];
+  var reg = new RegExp("^(?=.*\\d)[A-Za-z\\d]{8,}$");
 
-// document.getElementById("username").addEventListener('keyup', checkIfFormComplete);
-// document.getElementById("password").addEventListener('keyup', checkIfFormComplete);
-// document.getElementById("password2").addEventListener('keyup', checkIfFormComplete);
-// document.getElementById("password").addEventListener('blur', checkPassword);
-// document.getElementById("password2").addEventListener('keyup', checkPassword2);
-un.addEventListener('keyup', checkIfFormComplete);
-pw.addEventListener('keyup', checkIfFormComplete);
-pw2.addEventListener('keyup', checkIfFormComplete);
-pw.addEventListener('blur', checkPassword);
-pw.addEventListener('keyup', checkPassword2);
-pw2.addEventListener('keyup', checkPassword2);
-// let un = document.forms["create-account-form"]["username"];
-// let pw = document.forms["create-account-form"]["password"];
-// let pw2 = document.forms["create-account-form"]["password2"];
-const reg = new RegExp("^(?=.*\\d)[A-Za-z\\d]{8,}$");
+  un.addEventListener('keyup', checkIfFormComplete);
+  pw.addEventListener('keyup', checkIfFormComplete);
+  pw2.addEventListener('keyup', checkIfFormComplete);
+  pw.addEventListener('keyup', checkPassword);
+  pw.addEventListener('keyup', checkPassword2);
+  pw2.addEventListener('keyup', checkPassword2);
+}
 
 function checkIfFormComplete() {
   //Disable/enable button logic
