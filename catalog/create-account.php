@@ -38,6 +38,7 @@
   <link rel="stylesheet" type="text/css" href="css/ads.css">
   <link rel="stylesheet" type="text/css" href="css/login.css">
   <script src="js/script.js" defer></script>
+  <script src="js/form-script.js" defer></script>
   <title>ACME Corporation</title>
 </head>
   <?php 

@@ -27,7 +27,7 @@ section#cart h1 {
 #cart-header {
   height: 45px;
   display: grid;
-  grid-template-columns: 1fr 1.9fr .7fr .7fr .7fr;
+  grid-template-columns: 1fr 1.5fr .7fr 1fr .8fr;
   padding: 10px;
 }
 #cart-header-qty { text-align: center; }
@@ -37,7 +37,7 @@ section#cart h1 {
   height: 130px;
   border-top: 2px solid #d1caaa;
   display: grid;
-  grid-template-columns: 1fr 1.9fr .7fr .7fr .7fr;
+  grid-template-columns: 1fr 1.5fr .7fr 1fr .8fr;
   padding: 10px;
 }
 
@@ -46,9 +46,34 @@ section#cart h1 {
   width: 110px;
   border-radius: 10px;
 }
-.cart-item-qty { text-align: center; }
-.cart-item-price-total { text-align: end; }
+.cart-item-name p {
+  margin-right: 20px;
+}
 
+.cart-item-qty { 
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr;
+  height: 27px;
+  box-shadow:  0px 0px 5px #d1caaa;
+  background-color: #efede3;
+  border: 1px solid #d1caaa;
+  border-radius: 10px;
+  margin: 0 15px;
+  text-align: center; 
+}
+#qty-minus, #qty-plus {
+  text-align: center;
+  cursor: pointer;
+}
+#qty-count {
+  text-align: center;
+}
+.cart-item-qty .icon {
+  height: 24px;
+  padding-top: 2px;
+}
+
+.cart-item-price-total { text-align: end; }
 
 .cart-total {
   border-top: 2px solid #d1caaa;
@@ -71,6 +96,9 @@ section#cart h1 {
   padding-top: 15px;
 }
 #summary-total div {
+  font-size: 24px;
+}
+#summary-total span {
   font-size: 24px;
 }
 

@@ -79,17 +79,17 @@
     }
 
     echo '<div class="cart-total">';
-    echo 'Subtotal: $';
+    echo 'Subtotal: $<span id="cart-subtotal">';
     echo number_format(getCartSubtotal(), 2);
-    echo '</div>';
+    echo '</span></div>';
     echo '</div>';
 
     echo '<div class="right-side">';
     echo '<div class="summary" id="summary-shipping">';
     echo '<div class="summary-left">Delivery</div>';
-    echo '<div class="summary-right">$';
+    echo '<div class="summary-right">$<span id="cart-delivery">';
     echo number_format(getCartShipping(), 2);
-    echo '</div>';
+    echo '</span></div>';
     echo '</div>';
     echo '<div class="summary" id="summary-discount">';
     echo '<div class="summary-left">Discount</div>';
@@ -97,15 +97,15 @@
     echo '</div>';
     echo '<div class="summary" id="summary-tax">';
     echo '<div class="summary-left">Tax</div>';
-    echo '<div class="summary-right">$';
+    echo '<div class="summary-right">$<span id="cart-tax">';
     echo number_format(getCartTax(), 2);
-    echo '</div>';
+    echo '</span></div>';
     echo '</div>';
     echo '<div class="summary" id="summary-total">';
     echo '<div class="summary-left">Grand Total</div>';
-    echo '<div class="summary-right">$';
+    echo '<div class="summary-right">$<span id="cart-total">';
     echo number_format(getCartSubtotal(), 2);
-    echo '</div>';
+    echo '</span></div>';
     echo '</div>';
 
     echo '<p id="free-shipping-carrot">';
@@ -116,7 +116,7 @@
     }
     else { echo 'You\'re getting free delivery!'; }
     echo '</p>';
-    
+
     echo '<div id="checkout" class="button-container">';
     echo '<a href="#">CHECKOUT</a>';
     echo '</div>';
@@ -128,21 +128,31 @@
     $product = getProductFromDB($id);
 
     echo '<div class="cart-item">';
-    echo '<img class="cart-item-img" src="';
-    echo $product['image'];
-    echo '">';
-    echo '<div class="cart-item-name"><p>';
-    echo $product['name'];
-    echo '</p></div>';
+    echo '<img class="cart-item-img" src="'.$product['image'].'">';
+
+    echo '<div class="cart-item-name">';
+    echo '<p>'.$product['name'].'</p>';
+    echo '</div>';
+
     echo '<div class="cart-item-price-each">$';
+    echo '<span id="cart-item-price-each-'.$id.'">';
     echo number_format($product['price'], 2);
-    echo '</div>';
+    echo '</span></div>';
+
     echo '<div class="cart-item-qty">';
-    echo $qty;
+    echo '<div id="qty-minus" onclick="updateCartItemQty(false, '.$id.');">';
+    echo '<img class="icon" src="img/icons/minus.png">';
     echo '</div>';
+    echo '<div id="qty-count-'.$id.'">'.$qty.'</div>';
+    echo '<div id="qty-plus" onclick="updateCartItemQty(true, '.$id.');">';
+    echo '<img class="icon" src="img/icons/plus.png">';
+    echo '</div>';
+    echo '</div>';
+
     echo '<div class="cart-item-price-total">$';
+    echo '<span id="cart-item-price-total-'.$id.'">';
     echo number_format($product['price'] * $qty, 2);
-    echo '</div>';
+    echo '</span></div>';
     echo '</div>';
   }
 
