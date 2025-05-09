@@ -3,10 +3,18 @@ function clearField(id) {
 }
 
 function updateProductPageQty(up) {
-  qtyDiv = document.getElementById("qty-count");
-  qty = parseInt(qtyDiv.innerText);
-  if (up) qtyDiv.innerText = qty + 1;
-  else if (qty > 1) qtyDiv.innerText = qty - 1;
+  let qtyDiv = document.getElementById("qty-count");
+  let qty = parseInt(qtyDiv.innerText);
+  let qtyInput = document.getElementById("product-qty");
+
+  if (up) {
+    qtyDiv.innerText = qty + 1;
+    qtyInput.setAttribute('value', qty + 1);
+  }
+  else if (qty > 1) {
+    qtyDiv.innerText = qty - 1;
+    qtyInput.setAttribute('value', qty - 1);
+  }
 }
 
 // Listeners for form fields on create account page

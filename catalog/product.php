@@ -3,8 +3,32 @@
   include_once('includes/db.php');
   include_once('includes/functions.php');
 
+  // invalid product id redirect
   if (!isset($_GET['id']) || $_GET['id'] < 1 || $_GET['id'] > 20) 
     header('location: .');
+
+  // customer clicked add to cart
+  if (isset($_POST['buy-now'])) {
+    $pid = $_POST['product-id'];
+    $pqty = $_POST['product-qty'];
+    
+    $found = false;
+    if (isset($_SESSION['cart'])) {
+      foreach($_SESSION['cart'] as $id => $qty) {
+        if ($id == $pid) { 
+          $_SESSION['cart'][$id] += $pqty; 
+          $found = true;
+        }
+      }
+    }
+    else $_SESSION['cart'] = array(); 
+    
+    if (!$found) {
+      $_SESSION['cart'] += array($pid => (int) $pqty);
+    }
+    
+    header('location: cart.php');
+  }
 
   // error reporting
   if ($_SERVER['HTTP_HOST'] == 'localhost')
@@ -15,6 +39,7 @@
 
   // product info
   $product = getProductFromDB($_GET['id']);
+
 ?>
 
 
@@ -48,25 +73,29 @@
           </p>
           <p class="price">$<?php echo number_format($product['price'], 2); ?></p>
           <p id="product-blurb"><?php echo $product['description']; ?></p>
-          <div id="qty-and-cart">
-            <div id="qty-selector">
-              <p id="qty">Qty:</p>
-              <div id="qty-minus-plus">
-                <div id="qty-minus" onclick="updateProductPageQty(false);">
-                  <img class="icon" src="img/icons/minus.png">
-                </div>
-                <div id="qty-count">
-                  1
-                </div>
-                <div id="qty-plus" onclick="updateProductPageQty(true);">
-                  <img class="icon" src="img/icons/plus.png">
+          <form method="post">
+            <div id="qty-and-cart">
+              <div id="qty-selector">
+                <p id="qty">Qty:</p>
+                <div id="qty-minus-plus">
+                  <div id="qty-minus" onclick="updateProductPageQty(false);">
+                    <img class="icon" src="img/icons/minus.png">
+                  </div>
+                  <div id="qty-count">
+                    1
+                  </div>
+                  <div id="qty-plus" onclick="updateProductPageQty(true);">
+                    <img class="icon" src="img/icons/plus.png">
+                  </div>
                 </div>
               </div>
+              <div class="button-container" id="add-to-cart">
+                <input type="submit" class="button" id="buy-now" name="buy-now" value="ADD TO CART">
+              </div>
+              <input type="hidden" id="product-id" name="product-id" value="<?php echo $_GET['id'] ?>">
+              <input type="hidden" id="product-qty" name="product-qty" value="1">
             </div>
-            <div class="button-container" id="add-to-cart">
-              <a href="#">ADD TO CART</a>
-            </div>
-          </div>
+          </form>
         </div>  
       </div>  
     </section>
