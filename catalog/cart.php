@@ -104,7 +104,7 @@
     echo '<div class="summary" id="summary-total">';
     echo '<div class="summary-left">Grand Total</div>';
     echo '<div class="summary-right">$<span id="cart-total">';
-    echo number_format(getCartSubtotal(), 2);
+    echo number_format(getCartTotal(), 2);
     echo '</span></div>';
     echo '</div>';
 
