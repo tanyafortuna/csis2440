@@ -32,7 +32,7 @@
   }
   else {
     // Cart icon
-    if (isset($_SESSION['cart']) && array_sum(array_column($_SESSION['cart'],'qty')) > 0) {
+    if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
       echo '<a href="cart.php">';
       echo '<div id="cart-icon" class="tooltip-container">';
       echo '<img class="icon" src="img/icons/cart-full.png">';
