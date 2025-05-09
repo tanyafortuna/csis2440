@@ -23,17 +23,20 @@ function updateCartItemQty(up, id) {
   let newQty = qty;
   let qtyChg = 0;
 
-  // update qty as needed (not less than 1)
+  // update qty as needed
   if (up) {
     newQty++;
     qtyChg++;
+    updateCartPage(id, newQty, qtyChg);
   }
   else if (qty > 1) {
     newQty--;
     qtyChg--;
+    updateCartPage(id, newQty, qtyChg);
   }
-
-  updateCartPage(id, newQty, qtyChg);
+  else if (qty == 1) {
+    removeItemFromCart(id);
+  }
 }
 
 function updateCartPage(id, newQty, qtyChg) {
@@ -48,38 +51,42 @@ function updateCartPage(id, newQty, qtyChg) {
   let freeShipCarrot = document.getElementById("free-shipping-carrot");
 
   // update page 
-  if (newQty == 0) { cartItemDiv.remove(); }
-  else {
-    qtyDiv.innerText = newQty;
-    itemTotalDiv.innerText = formatNicely(
-      newQty * getNumFrom(itemPriceDiv.innerText)
-    );
-  }
-
   let subtotal = formatNicely(
     qtyChg * getNumFrom(itemPriceDiv.innerText) +
     getNumFrom(cartSubtotalDiv.innerText)
   );
-  cartSubtotalDiv.innerText = subtotal;
+  if (subtotal == 0) window.location.href = 'cart.php';
+  else {
+    cartSubtotalDiv.innerText = subtotal;
 
-  cartDeliveryDiv.innerText = formatNicely(
-    getCartShipping(getNumFrom(cartSubtotalDiv.innerText))
-  );
 
-  cartTaxDiv.innerText = formatNicely(
-    getCartTax(getNumFrom(cartSubtotalDiv.innerText))
-  );
+    if (newQty == 0) { cartItemDiv.remove(); }
+    else {
+      qtyDiv.innerText = newQty;
+      itemTotalDiv.innerText = formatNicely(
+        newQty * getNumFrom(itemPriceDiv.innerText)
+      );
+    }
 
-  cartTotalDiv.innerText = formatNicely(
-    getCartTotal(getNumFrom(cartSubtotalDiv.innerText))
-  );
+    cartDeliveryDiv.innerText = formatNicely(
+      getCartShipping(getNumFrom(cartSubtotalDiv.innerText))
+    );
 
-  if (subtotal < 999) {
-    freeShipCarrot.innerHTML = "You're only <span>$" +
-      formatNicely(999 - subtotal) +
-      "</span> away from free delivery!";
+    cartTaxDiv.innerText = formatNicely(
+      getCartTax(getNumFrom(cartSubtotalDiv.innerText))
+    );
+
+    cartTotalDiv.innerText = formatNicely(
+      getCartTotal(getNumFrom(cartSubtotalDiv.innerText))
+    );
+
+    if (subtotal < 999) {
+      freeShipCarrot.innerHTML = "You're only <span>$" +
+        formatNicely(999 - subtotal) +
+        "</span> away from free delivery!";
+    }
+    else { freeShipCarrot.innerText = "You're getting free delivery!"; }
   }
-  else { freeShipCarrot.innerText = "You're getting free delivery!"; }
 }
 
 function getNumFrom(s) {

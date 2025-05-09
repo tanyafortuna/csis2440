@@ -54,9 +54,9 @@
 <!-- Output printing functions -->
 <?php
   function printEmptyCart() {
-    echo '<h1>YOUR CART</h1>';
+    echo '<h1>YOUR CART IS EMPTY</h1>';
     echo '<div id="cart-empty">';
-    echo '<p class="cart-blurb">No gadgets, gizmos, or gravity-defying gear—yet. Your cart\'s just waiting for a touch of ACME brilliance (or chaos) to get rolling. Browse our lineup of clever, curious, and questionably safe contraptions to spark your next big idea.</p>';
+    echo '<p class="cart-blurb">No gadgets, gizmos, or gravity-defying gear — yet. Your cart\'s just waiting for a touch of ACME brilliance (or chaos) to get rolling. Browse our lineup of clever, curious, and questionably safe contraptions to spark your next big idea.</p>';
     echo '</div>';
     include_once("includes/ads.php");
   }

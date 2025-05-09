@@ -12,4 +12,7 @@
       break;
     }
   }
+
+  if (empty($_SESSION['cart']))
+    header('location: cart.php');
 ?>
