@@ -51,7 +51,6 @@
   <link rel="stylesheet" type="text/css" href="css/nav.css">
   <link rel="stylesheet" type="text/css" href="css/button.css">
   <link rel="stylesheet" type="text/css" href="css/product.css">
-  <script src="js/script.js" defer></script>
   <script src="js/product-script.js" defer></script>
   <title>ACME Corporation</title>
 </head>

@@ -21,7 +21,7 @@
   <link rel="stylesheet" type="text/css" href="css/button.css">
   <link rel="stylesheet" type="text/css" href="css/ads.css">
   <link rel="stylesheet" type="text/css" href="css/cart.css">
-  <script src="js/script.js" defer></script>
+  <script src="js/cart-script.js" defer></script>
   <title>ACME Corporation</title>
 </head>
   <?php 
@@ -127,11 +127,16 @@
   function printCartItem($id, $qty) {
     $product = getProductFromDB($id);
 
-    echo '<div class="cart-item">';
+    echo '<div class="cart-item" id="cart-item-'.$id.'">';
     echo '<img class="cart-item-img" src="'.$product['image'].'">';
 
     echo '<div class="cart-item-name">';
-    echo '<p>'.$product['name'].'</p>';
+    echo '<p class="top">'.$product['name'].'</p>';
+    echo '<div class="remove-item" onclick="removeItemFromCart('.$id.');">';
+    echo '<p class="bottom" id="remove-item-'.$id.'">';
+    echo '<img class="icon" src="img/icons/delete.png">';
+    echo '<span>Remove item</span></p>';
+    echo '</div>';
     echo '</div>';
 
     echo '<div class="cart-item-price-each">$';

@@ -24,7 +24,6 @@
   <link rel="stylesheet" type="text/css" href="css/nav.css">
   <link rel="stylesheet" type="text/css" href="css/button.css">
   <link rel="stylesheet" type="text/css" href="css/login.css">
-  <script src="js/script.js" defer></script>
   <title>ACME Corporation</title>
 </head>
   <?php 

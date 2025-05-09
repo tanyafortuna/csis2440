@@ -1,24 +1,27 @@
+function removeItemFromCart(id) {
+  // update session variable
+  fetch('includes/delete-cart-item-in-session.php', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ id: id, qty: 0 })
+  });
+
+  let qtyChg = -1 * parseInt(document.getElementById("qty-count-" + id).innerText);
+
+  updateCartPage(id, 0, qtyChg);
+}
+
 function updateCartItemQty(up, id) {
   // update session variable
-  fetch('includes/update-session-cart.php', {
+  fetch('includes/update-cart-qty-in-session.php', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ id: id, up: up })
   });
 
-  // update page so a refresh isn't needed
-  let qtyDiv = document.getElementById("qty-count-" + id);
-  let qty = parseInt(qtyDiv.innerText);
+  let qty = parseInt(document.getElementById("qty-count-" + id).innerText);
   let newQty = qty;
   let qtyChg = 0;
-
-  let itemPriceDiv = document.getElementById("cart-item-price-each-" + id);
-  let itemTotalDiv = document.getElementById("cart-item-price-total-" + id);
-  let cartSubtotalDiv = document.getElementById("cart-subtotal");
-  let cartDeliveryDiv = document.getElementById("cart-delivery");
-  let cartTaxDiv = document.getElementById("cart-tax");
-  let cartTotalDiv = document.getElementById("cart-total");
-  let freeShipCarrot = document.getElementById("free-shipping-carrot");
 
   // update qty as needed (not less than 1)
   if (up) {
@@ -30,11 +33,28 @@ function updateCartItemQty(up, id) {
     qtyChg--;
   }
 
+  updateCartPage(id, newQty, qtyChg);
+}
+
+function updateCartPage(id, newQty, qtyChg) {
+  let cartItemDiv = document.getElementById("cart-item-" + id);
+  let qtyDiv = document.getElementById("qty-count-" + id);
+  let itemPriceDiv = document.getElementById("cart-item-price-each-" + id);
+  let itemTotalDiv = document.getElementById("cart-item-price-total-" + id);
+  let cartSubtotalDiv = document.getElementById("cart-subtotal");
+  let cartDeliveryDiv = document.getElementById("cart-delivery");
+  let cartTaxDiv = document.getElementById("cart-tax");
+  let cartTotalDiv = document.getElementById("cart-total");
+  let freeShipCarrot = document.getElementById("free-shipping-carrot");
+
   // update page 
-  qtyDiv.innerText = newQty;
-  itemTotalDiv.innerText = formatNicely(
-    newQty * getNumFrom(itemPriceDiv.innerText)
-  );
+  if (newQty == 0) { cartItemDiv.remove(); }
+  else {
+    qtyDiv.innerText = newQty;
+    itemTotalDiv.innerText = formatNicely(
+      newQty * getNumFrom(itemPriceDiv.innerText)
+    );
+  }
 
   let subtotal = formatNicely(
     qtyChg * getNumFrom(itemPriceDiv.innerText) +
@@ -60,7 +80,6 @@ function updateCartItemQty(up, id) {
       "</span> away from free delivery!";
   }
   else { freeShipCarrot.innerText = "You're getting free delivery!"; }
-
 }
 
 function getNumFrom(s) {

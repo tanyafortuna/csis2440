@@ -20,7 +20,6 @@
   <link rel="stylesheet" type="text/css" href="css/nav.css">
   <link rel="stylesheet" type="text/css" href="css/catalog.css">
   <link rel="stylesheet" type="text/css" href="css/product-card.css">
-  <script src="js/script.js" defer></script>
   <title>ACME Corporation</title>
 </head>
   <?php 

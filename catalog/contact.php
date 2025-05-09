@@ -19,7 +19,6 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="css/nav.css">
   <link rel="stylesheet" type="text/css" href="css/contact.css">
-  <script src="js/script.js" defer></script>
   <title>ACME Corporation</title>
 </head>
   <?php 
