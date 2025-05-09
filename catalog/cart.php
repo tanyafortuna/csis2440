@@ -30,7 +30,7 @@
   <main>
     <section id="cart">
       <?php 
-        if (isset($_SESSION['cart']) && array_sum(array_column($_SESSION['cart'],'qty')) > 0)
+        if (isset($_SESSION['cart']) && !empty($_SESSION['cart']))
           echo printCartContents();
         else
           echo printEmptyCart();
@@ -74,21 +74,22 @@
     echo '<p id="cart-header-total">TOTAL</p>';
     echo '</div>';
     
-    printCartItem(13);
-    printCartItem(12);
-    // foreach ($_SESSION['cart'] as $product) {
-    //   printCartItem($product['id']);
-    // }
+    foreach ($_SESSION['cart'] as $id => $qty) {
+      printCartItem($id, $qty);
+    }
 
     echo '<div class="cart-total">';
-    echo 'Total: $10000000000';
+    echo 'Subtotal: $';
+    echo number_format(getCartSubtotal(), 2);
     echo '</div>';
     echo '</div>';
 
     echo '<div class="right-side">';
     echo '<div class="summary" id="summary-shipping">';
-    echo '<div class="summary-left">Shipping</div>';
-    echo '<div class="summary-right">$15.75</div>';
+    echo '<div class="summary-left">Delivery</div>';
+    echo '<div class="summary-right">$';
+    echo number_format(getCartShipping(), 2);
+    echo '</div>';
     echo '</div>';
     echo '<div class="summary" id="summary-discount">';
     echo '<div class="summary-left">Discount</div>';
@@ -96,14 +97,26 @@
     echo '</div>';
     echo '<div class="summary" id="summary-tax">';
     echo '<div class="summary-left">Tax</div>';
-    echo '<div class="summary-right">$7.45</div>';
+    echo '<div class="summary-right">$';
+    echo number_format(getCartTax(), 2);
+    echo '</div>';
     echo '</div>';
     echo '<div class="summary" id="summary-total">';
     echo '<div class="summary-left">Grand Total</div>';
-    echo '<div class="summary-right">$567.45</div>';
+    echo '<div class="summary-right">$';
+    echo number_format(getCartSubtotal(), 2);
+    echo '</div>';
     echo '</div>';
 
-    echo '<p id="free-shipping-carrot">You\'re only <span>$432.55</span> away from free shipping!</p>';
+    echo '<p id="free-shipping-carrot">';
+    if (getCartSubtotal() < 999) {
+      echo 'You\'re only <span>$';
+      echo number_format(getFreeShippingCarrot(), 2);
+      echo '</span> away from free delivery!';
+    }
+    else { echo 'You\'re getting free delivery!'; }
+    echo '</p>';
+    
     echo '<div id="checkout" class="button-container">';
     echo '<a href="#">CHECKOUT</a>';
     echo '</div>';
@@ -111,14 +124,59 @@
     echo '</div>';
   }
 
-  function printCartItem($id) {
+  function printCartItem($id, $qty) {
+    $product = getProductFromDB($id);
+
     echo '<div class="cart-item">';
-    echo '<img class="cart-item-img" src="img/product-images/'.$id.'.jpg">';
-    echo '<div class="cart-item-name"><p>Iron Carrot</p></div>';
-    echo '<div class="cart-item-price-each">$38.99</div>';
-    echo '<div class="cart-item-qty">2</div>';
-    echo '<div class="cart-item-price-total">$77.98</div>';
+    echo '<img class="cart-item-img" src="';
+    echo $product['image'];
+    echo '">';
+    echo '<div class="cart-item-name"><p>';
+    echo $product['name'];
+    echo '</p></div>';
+    echo '<div class="cart-item-price-each">$';
+    echo number_format($product['price'], 2);
     echo '</div>';
+    echo '<div class="cart-item-qty">';
+    echo $qty;
+    echo '</div>';
+    echo '<div class="cart-item-price-total">$';
+    echo number_format($product['price'] * $qty, 2);
+    echo '</div>';
+    echo '</div>';
+  }
+
+  function getCartSubtotal() {
+    $total = 0;
+
+    foreach ($_SESSION['cart'] as $id => $qty) {
+      $product = getProductFromDB($id);
+      $total += $product['price'] * $qty;
+    }
+
+    return $total;
+  }
+
+  function getCartShipping() {
+    $total = getCartSubtotal();
+    if ($total >= 999)
+      return 0;
+    else {
+      return max(5.99, $total * .1);
+    }
+  }
+
+  function getCartTax() {
+    $total = getCartSubtotal();
+    return $total * .07;
+  }
+
+  function getCartTotal() {
+    return getCartSubtotal() + getCartShipping() + getCartTax();
+  }
+
+  function getFreeShippingCarrot() {
+    return 999 - getCartSubtotal();
   }
 
 ?>
