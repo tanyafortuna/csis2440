@@ -1,24 +1,12 @@
 /*               */
 /* Login section */
 /*               */
-section#login {
-  background-color: #ECE9DC;
-  letter-spacing: 1px;
-  padding: 35px;
-  min-height: calc(100vh - 415px);
-}
-section#login h1 {
-  font-size: 36px;
-  text-align: center;
-  margin: 25px;
-}
 p.login-blurb {
   width: 425px;
   margin: 30px auto;
   text-align: center;
 }
 p.login-blurb a { color: black; }
-
 
 #login-form form {
   width: 260px;
@@ -33,6 +21,7 @@ p.login-blurb a { color: black; }
   font-size: 16px;
   padding: 0 0 2px 2px;
 }
+
 input.field {
   background-color: #ECE9DC;
   border: 1px solid #d1caaa;
@@ -41,9 +30,8 @@ input.field {
   text-indent: 8px;
   box-shadow:  0px 0px 5px #d1caaa;
 }
-input.field.error {
-  border: 1px solid #F22233;
-}
+input.field.error { border: 1px solid #F22233; }
+
 input.button {
   margin-top: 25px;
   margin-bottom: 10px;

@@ -1,29 +1,13 @@
 /*                 */
 /* Contact section */
 /*                 */
-section#contact {
-  background-color: #ECE9DC;
-  letter-spacing: 1px;
-  padding: 35px;
-  min-height: calc(100vh - 415px);
-}
-section#contact h1 {
-  font-size: 36px;
-  text-align: center;
-  margin: 25px;
-}
-
 #contact-us {
-  width: 60vw;
   display: grid;
   grid-template-columns: auto 255px;
-  gap: 50px;
-  margin: 40px auto;
+  gap: 125px;
 }
 
-#contact-us .icon {
-  height: 30px;
-}
+#contact-us .icon { height: 30px; }
 
 p.contact-blurb {
   margin: 10px 0 20px 0;

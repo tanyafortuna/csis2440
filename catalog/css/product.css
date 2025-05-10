@@ -1,19 +1,10 @@
 /*                 */
 /* Product section */
 /*                 */
-section#product {
-  background-color: #ECE9DC;
-  letter-spacing: 1px;
-  padding: 35px 0;
-}
-
 #product-detail {
-  width: 1000px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 30px;
-  margin: 40px auto;
-  min-height: calc(100vh - 490px);
 }
 
 #product-detail .left-side {
@@ -47,7 +38,7 @@ section#product {
 
 #qty-and-cart {
   display: grid;
-  grid-template-columns: 200px 200px;
+  grid-template-columns: 200px 260px;
   grid-template-rows: 50px;
   gap: 20px;
 }

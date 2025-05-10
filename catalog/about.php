@@ -26,9 +26,9 @@
   <?php include_once("includes/nav.php"); ?>
 
   <main>
-    <section id="about">
-      <h1>IF IT'S ACME, IT'S A GASSER</h1>
-      <div id="about-us">
+    <section id="about" class="common height">
+      <h1 class="common">IF IT'S ACME, IT'S A GASSER</h1>
+      <div id="about-us" class="common subsection">
         <div class="left-side">
           <img src="img/poster.webp">
         </div>

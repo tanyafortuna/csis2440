@@ -1,24 +1,10 @@
 /*              */
 /* Cart section */
 /*              */
-section#cart {
-  background-color: #ECE9DC;
-  letter-spacing: 1px;
-  padding: 35px 0;
-  min-height: calc(100vh - 415px);
-}
-section#cart h1 {
-  font-size: 36px;
-  text-align: center;
-  margin: 25px;
-}
-
 #cart-detail {
-  width: 1000px;
   display: grid;
   grid-template-columns: 650px 275px;
   gap: 75px;
-  margin: 40px auto;
 }
 
 #cart-header {
@@ -132,18 +118,4 @@ section#cart h1 {
 #free-shipping-carrot span {
   color: #F22233;
   font-size: 14px;
-}
-
-/*            */
-/* Empty cart */
-/*            */
-#cart-detail {
-  width: 1000px;
-  margin: 40px auto;
-}
-p.cart-blurb {
-  width: 650px;
-  margin: 30px auto 0 auto;
-  text-align: center;
-  padding-bottom: 15px;
 }

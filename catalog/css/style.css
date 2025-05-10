@@ -8,5 +8,36 @@
   font-family: "Voltaire";
   font-size: 20px;
   scroll-behavior: smooth;
-  
+}
+
+/*            */
+/* Common CSS */
+/*            */
+
+section.common {
+  background-color: #ECE9DC;
+  letter-spacing: 1px;
+  padding: 15px;
+}
+
+section.height.common {
+  min-height: calc(100vh - 415px);
+}
+
+h1.common {
+  font-size: 36px;
+  text-align: center;
+  margin: 20px;
+}
+
+div.subsection.common {
+  width: 1000px;
+  margin: 40px auto 0 auto;
+}
+
+p.common {
+  width: 650px;
+  margin: 30px auto;
+  text-align: center;
+  padding-bottom: 15px;
 }

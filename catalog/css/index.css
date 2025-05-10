@@ -56,10 +56,6 @@ section#highlighted {
   padding-top: 35px;
   padding-bottom: 15px;
 }
-section#highlighted h1 {
-  font-size: 36px;
-  text-align: center;
-}
 div#highlighted-product {
   position: relative;
   height: 710px;
@@ -121,27 +117,9 @@ p#review-2 { top: 575px; }
 /*                  */
 /* Trending section */
 /*                  */
-section#trending {
-  background-color: #ECE9DC;
-  letter-spacing: 1px;
-  padding: 35px 0 50px 0;
-}
-section#trending h1 {
-  font-size: 36px;
-  text-align: center;
-  margin: 25px 0 35px 0;
-}
 #trending-products {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  width: 970px;
-  margin: 0 auto;
-  /* margin-bottom: 50px; */
-}
-#trending .icon {
-  height: 32px;
-  margin-left: 5px;
-  padding-top: 3px;
 }
 
 /*                 */
@@ -152,7 +130,7 @@ section#reasons {
   display: grid;
   grid-template-columns: repeat(4, auto);
   justify-content: space-evenly;
-  padding: 60px 50px 25px 50px;
+  padding: 60px 25px 25px 25px;
 }
 section#reasons .reason {
   width: 200px;

@@ -30,9 +30,9 @@
   ?>
   
   <main>
-    <section id="catalog">
-      <h1>ALL PRODUCTS</h1>
-      <p id="all-products-blurb">From classics that defy physics to gadgets no one asked for but everyone needs, ACME's full lineup is engineered for maximum impact and minimal hesitation. Whether you're cooking up a plan or dodging the consequences, there's a product for every improbable scenario.</p>
+    <section id="catalog" class="common height">
+      <h1 class="common">ALL PRODUCTS</h1>
+      <p id="all-products-blurb" class="common">From classics that defy physics to gadgets no one asked for but everyone needs, ACME's full lineup is engineered for maximum impact and minimal hesitation. Whether you're cooking up a plan or dodging the consequences, there's a product for every improbable scenario.</p>
       <div id="all-products">
         <?php
           for ($i = 0; $i < 20; $i++) {

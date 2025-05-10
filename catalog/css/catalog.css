@@ -1,23 +1,7 @@
 /*                      */
 /* All products section */
 /*                      */
-section#catalog {
-  background-color: #ECE9DC;
-  letter-spacing: 1px;
-  padding: 35px;
-}
-section#catalog h1 {
-  font-size: 36px;
-  text-align: center;
-  margin: 25px;
-}
 
-#all-products-blurb {
-  width: 750px;
-  margin: 0 auto;
-  text-align: center;
-  margin-bottom: 40px;
- }
 
 #all-products {
   display: flex;

@@ -3,16 +3,12 @@
 /*               */
 .gapper {
   height: 20px;
-  width: 1000px;
-  margin: 0 auto;
   border-top: 3px solid #d1caaa;
 }
 #order-summary {
-  width: 1000px;
   display: grid;
   grid-template-columns: 650px 275px;
   gap: 75px;
-  margin: 40px auto;
 }
 
 #order-header {

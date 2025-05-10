@@ -26,9 +26,9 @@
   <?php include_once("includes/nav.php"); ?>
 
   <main>
-    <section id="contact">
-      <h1>CONTACT US</h1>
-      <div id="contact-us">
+    <section id="contact" class="common height">
+      <h1 class="common">CONTACT US</h1>
+      <div id="contact-us" class="common subsection">
         <div class="left-side">
           <p class="contact-blurb">
             Have a question, comment, or minor crater to report? We'd love to hear from you. Whether you're seeking product support, requesting a replacement spring-loaded boxing glove, or simply wondering what went wrong (again), the ACME team is here to help — more or less, depending on the fallout.

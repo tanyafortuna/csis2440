@@ -29,7 +29,7 @@
   <?php include_once("includes/nav.php"); ?>
 
   <main>
-    <section id="cart">
+    <section id="cart" class="common height">
       <?php 
         if (isset($_SESSION['cart']) && !empty($_SESSION['cart']))
           echo printCartContents();
@@ -46,16 +46,16 @@
 <!-- Output printing functions -->
 <?php
   function printEmptyCart() {
-    echo '<h1>YOUR CART IS EMPTY</h1>';
-    echo '<div id="cart-empty">';
-    echo '<p class="cart-blurb">No gadgets, gizmos, or gravity-defying gear — yet. Your cart\'s just waiting for a touch of ACME brilliance (or chaos) to get rolling. Browse our lineup of clever, curious, and questionably safe contraptions to spark your next big idea.</p>';
+    echo '<h1 class="common">YOUR CART IS EMPTY</h1>';
+    echo '<div id="cart-empty" class="common subsection">';
+    echo '<p class="cart-blurb common">No gadgets, gizmos, or gravity-defying gear — yet. Your cart\'s just waiting for a touch of ACME brilliance (or chaos) to get rolling. Browse our lineup of clever, curious, and questionably safe contraptions to spark your next big idea.</p>';
     echo '</div>';
     include_once("includes/ads.php");
   }
 
   function printCartContents() {
-    echo '<h1>YOUR CART</h1>';
-    echo '<div id="cart-detail">';
+    echo '<h1 class="common">YOUR CART</h1>';
+    echo '<div id="cart-detail" class="common subsection">';
     echo '<div class="left-side">';
     echo '<div id="cart-header">';
     echo '<p></p>';

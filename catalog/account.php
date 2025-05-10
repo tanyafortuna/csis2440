@@ -20,7 +20,6 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="css/nav.css">
   <link rel="stylesheet" type="text/css" href="css/footer.css">
-  <link rel="stylesheet" type="text/css" href="css/account.css">
   <link rel="stylesheet" type="text/css" href="css/order-summary.css">
   <title>ACME Corporation</title>
 </head>
@@ -28,10 +27,10 @@
   <?php include_once("includes/nav.php"); ?>
 
   <main>
-  <section id="account">
-    <h1>YOUR ACME JOURNEY CONTINUES HERE</h1>
-    <div id="your-account">
-     <p class="account-blurb">This is your control center — where past plots live on and new ones begin. Browse your order history, brainstorm your next big idea, and remember: no genius ever played it safe. Whatever you're building, ACME's got your back. And if things go sideways (again), don't worry — we've seen worse. Probably.</p>
+  <section id="account" class="common height">
+    <h1 class="common">YOUR ACME JOURNEY CONTINUES HERE</h1>
+    <div id="your-account" class="common subsection">
+     <p class="account-blurb common">This is your control center — where past plots live on and new ones begin. Browse your order history, brainstorm your next big idea, and remember: no genius ever played it safe. Whatever you're building, ACME's got your back. And if things go sideways (again), don't worry — we've seen worse. Probably.</p>
     </div>
     
     <?php 

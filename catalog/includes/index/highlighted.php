@@ -1,6 +1,6 @@
 <?php
   echo '<section id="highlighted">';
-  echo '<h1>NOW AVAILABLE</h1>';
+  echo '<h1 class="common">NOW AVAILABLE</h1>';
   echo '<div id="highlighted-product">';
   echo '<img id="iron-carrot-ad" src="img/ad-iron-carrot.webp">';
   echo '<img id="newspaper" src="img/newspaper.webp">';

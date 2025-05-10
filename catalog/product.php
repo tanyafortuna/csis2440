@@ -50,8 +50,8 @@
   ?>
 
   <main>
-    <section id="product">
-      <div id="product-detail">
+    <section id="product" class="common height">
+      <div id="product-detail" class="common subsection">
         <div class="left-side">
           <img id="product-img" src="<?php echo $product['image']; ?>">
         </div>    

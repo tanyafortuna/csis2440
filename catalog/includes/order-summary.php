@@ -25,11 +25,11 @@
   }
 
   function printOrderSummary($oid) {
-    echo '<div class="gapper"></div>';
-    echo '<h1>ORDER #'.$oid.' - PLACED ';
+    echo '<div class="gapper common subsection"></div>';
+    echo '<h1 class="common">ORDER #'.$oid.' - PLACED ';
     echo getOrderInfo($oid)['order_date']; 
     echo '</h1>';
-    echo '<div id="order-summary">';
+    echo '<div id="order-summary" class="common subsection">';
 
     // Left side (items)
     echo '<div class="left-side">';

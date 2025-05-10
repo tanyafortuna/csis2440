@@ -1,13 +1,7 @@
 /*             */
 /* Ads section */
 /*             */
-section#ads {
-  background-color: #ECE9DC;
-  padding-bottom: 15px;
-}
-
 section#ads a { width: fit-content; }
-section#ads h1 { font-size: 36px; }
 
 #shop-all {
   display: block;
