@@ -2,6 +2,7 @@
   session_start();
   include_once('includes/db.php');
   include_once('includes/functions.php');
+  if (!isGranted()) header('location: .');
 
   // error reporting
   if ($_SERVER['HTTP_HOST'] == 'localhost')
