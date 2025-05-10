@@ -78,13 +78,14 @@
       printCartItem($id, $qty);
     }
 
-    echo '<div class="cart-total">';
+    echo '<div class="cart-subtotal">';
     echo 'Subtotal: $<span id="cart-subtotal">';
     echo number_format(getCartSubtotal(), 2);
     echo '</span></div>';
     echo '</div>';
 
     echo '<div class="right-side">';
+    echo '<div id="summary-heading">CART SUMMARY</div>';
     echo '<div class="summary" id="summary-shipping">';
     echo '<div class="summary-left">Delivery</div>';
     echo '<div class="summary-right">$<span id="cart-delivery">';

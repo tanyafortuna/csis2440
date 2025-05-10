@@ -27,6 +27,10 @@ section#cart h1 {
   grid-template-columns: 1fr 1.5fr .7fr 1fr .8fr;
   padding: 10px;
 }
+
+/*           */
+/* Left side */
+/*           */
 #cart-header-qty { text-align: center; }
 #cart-header-total { text-align: end; }
 
@@ -91,22 +95,31 @@ section#cart h1 {
 
 .cart-item-price-total { text-align: end; }
 
-.cart-total {
+.cart-subtotal {
   border-top: 2px solid #d1caaa;
   padding: 10px;
   text-align: end;
 }
 
+/*            */
+/* Right side */
+/*            */
+#summary-heading {
+  height: 47px;
+  padding: 10px;
+  text-align: center;
+  border-bottom: 2px solid #d1caaa;
+}
 .right-side .summary {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin: 15px 0;
+  margin: 13px 0;
 }
 .summary-right { text-align: end; }
 
 #summary-total {
   border-top: 2px solid #d1caaa;
-  padding-top: 15px;
+  padding-top: 10px;
 }
 #summary-total div { font-size: 24px; }
 #summary-total span { font-size: 24px; }
