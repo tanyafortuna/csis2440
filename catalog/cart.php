@@ -18,15 +18,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="css/nav.css">
+  <link rel="stylesheet" type="text/css" href="css/footer.css">
   <link rel="stylesheet" type="text/css" href="css/button.css">
   <link rel="stylesheet" type="text/css" href="css/ads.css">
   <link rel="stylesheet" type="text/css" href="css/cart.css">
   <script src="js/cart-script.js" defer></script>
   <title>ACME Corporation</title>
 </head>
-  <?php 
-    include_once("includes/nav.php"); 
-  ?>
+<body>
+  <?php include_once("includes/nav.php"); ?>
+
   <main>
     <section id="cart">
       <?php 
@@ -34,20 +35,11 @@
           echo printCartContents();
         else
           echo printEmptyCart();
-
       ?>
-      
     </section>
   </main>
   
-
-  
-
-
-  
-  <footer></footer>
-
-  
+  <?php include_once("includes/footer.php"); ?>
 </body>
 </html>
 

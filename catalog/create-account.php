@@ -36,15 +36,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="css/nav.css">
+  <link rel="stylesheet" type="text/css" href="css/footer.css">
   <link rel="stylesheet" type="text/css" href="css/button.css">
   <link rel="stylesheet" type="text/css" href="css/ads.css">
   <link rel="stylesheet" type="text/css" href="css/login.css">
   <script src="js/form-script.js" defer></script>
   <title>ACME Corporation</title>
 </head>
-  <?php 
-    include_once("includes/nav.php"); 
-  ?>
+<body>
+  <?php include_once("includes/nav.php"); ?>
+  
   <main>
     <section id="login">
       <?php
@@ -54,14 +55,7 @@
     </section>
   </main>
   
-
-  
-
-
-  
-  <footer></footer>
-
-  
+  <?php include_once("includes/footer.php"); ?>  
 </body>
 </html>
 

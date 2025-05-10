@@ -32,13 +32,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="css/nav.css">
+  <link rel="stylesheet" type="text/css" href="css/footer.css">
   <link rel="stylesheet" type="text/css" href="css/button.css">
   <link rel="stylesheet" type="text/css" href="css/login.css">
   <title>ACME Corporation</title>
 </head>
-  <?php 
-    include_once("includes/nav.php"); 
-  ?>
+<body>
+  <?php include_once("includes/nav.php"); ?>
+
   <main>
     <section id="login">
       <h1>WELCOME BACK, ACME INSIDER</h1>
@@ -51,7 +52,6 @@
         }
       ?>
       <div id="login-form">
-        <form method="post"
         <?php 
           if (isset($_GET['pid'])) 
             echo '<form method="post" action="login.php?pid='.$_GET['pid'].'&qty='.$_GET['qty'].'">';
@@ -91,13 +91,6 @@
     </section>
   </main>
   
-
-  
-
-
-  
-  <footer></footer>
-
-  
+  <?php include_once("includes/footer.php"); ?>
 </body>
 </html>

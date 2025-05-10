@@ -18,12 +18,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="css/nav.css">
+  <link rel="stylesheet" type="text/css" href="css/footer.css">
   <link rel="stylesheet" type="text/css" href="css/about.css">
   <title>ACME Corporation</title>
 </head>
-  <?php 
-    include_once("includes/nav.php"); 
-  ?>
+<body>
+  <?php include_once("includes/nav.php"); ?>
+
   <main>
     <section id="about">
       <h1>IF IT'S ACME, IT'S A GASSER</h1>
@@ -52,13 +53,6 @@
     </section>
   </main>
   
-
-  
-
-
-  
-  <footer></footer>
-
-  
+  <?php include_once("includes/footer.php"); ?>
 </body>
 </html>

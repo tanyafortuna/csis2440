@@ -18,10 +18,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="css/nav.css">
+  <link rel="stylesheet" type="text/css" href="css/footer.css">
   <link rel="stylesheet" type="text/css" href="css/catalog.css">
   <link rel="stylesheet" type="text/css" href="css/product-card.css">
   <title>ACME Corporation</title>
 </head>
+<body>
   <?php 
     include_once("includes/product-card.php");
     include_once("includes/nav.php"); 
@@ -34,20 +36,13 @@
       <div id="all-products">
         <?php
           for ($i = 0; $i < 20; $i++) {
-            echo generateProductCard($i + 1, "Generic Name", 9.99);
+            echo generateProductCard($i + 1);
           }
         ?>
       </div>
     </section>
   </main>
   
-
-  
-
-
-  
-  <footer></footer>
-
-  
+  <?php include_once("includes/footer.php"); ?>
 </body>
 </html>

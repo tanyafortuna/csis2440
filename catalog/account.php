@@ -19,14 +19,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="css/nav.css">
+  <link rel="stylesheet" type="text/css" href="css/footer.css">
   <link rel="stylesheet" type="text/css" href="css/account.css">
   <link rel="stylesheet" type="text/css" href="css/order-summary.css">
   <title>ACME Corporation</title>
 </head>
-  <?php 
-    include_once("includes/nav.php"); 
-    echo '<main>';
-  ?>
+<body>
+  <?php include_once("includes/nav.php"); ?>
+
+  <main>
   <section id="account">
     <h1>YOUR ACME JOURNEY CONTINUES HERE</h1>
     <div id="your-account">
@@ -40,18 +41,9 @@
           printOrderSummary($oid);  
         }
       ?>
-
   </section>
-  <?php
-    echo '</main>';
-  ?>
+  </main>
 
-  
-
-
-  
-  <footer></footer>
-
-  
+  <?php include_once("includes/footer.php"); ?>
 </body>
 </html>
