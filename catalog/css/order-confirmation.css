@@ -13,7 +13,7 @@ section#order-confirmation h1 {
   margin: 25px;
 }
 
-#order-summary {
+#order-blurbs {
   width: 1000px;
   margin: 40px auto;
 }
@@ -21,5 +21,67 @@ p.order-blurb {
   width: 650px;
   margin: 30px auto 0 auto;
   text-align: center;
-  padding-bottom: 15px;
+  /* padding-bottom: 5px; */
 }
+
+#order-summary {
+  width: 1000px;
+  display: grid;
+  grid-template-columns: 650px 275px;
+  gap: 75px;
+  margin: 40px auto;
+}
+
+#order-header {
+  height: 45px;
+  display: grid;
+  grid-template-columns: 1.5fr 1.5fr 1fr 1fr;
+  padding: 10px;
+  border-bottom: 2px solid #d1caaa;
+}
+
+/*           */
+/* Left side */
+/*           */
+#order-header-qty { text-align: center; }
+#order-header-total { text-align: end; }
+
+.order-item {
+  /* height: 65px; */
+  /* border-top: 2px solid #d1caaa; */
+  display: grid;
+  grid-template-columns: 1.5fr 1.5fr 1fr 1fr;
+  padding: 9px;
+}
+
+.order-item-qty { text-align: center; }
+.order-item-price-total { text-align: end; }
+
+.order-subtotal {
+  border-top: 2px solid #d1caaa;
+  padding: 10px;
+  text-align: end;
+}
+
+/*            */
+/* Right side */
+/*            */
+#summary-heading {
+  height: 47px;
+  padding: 10px;
+  text-align: center;
+  border-bottom: 2px solid #d1caaa;
+}
+.right-side .summary {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 13px 0;
+}
+.summary-right { text-align: end; }
+
+#summary-total {
+  border-top: 2px solid #d1caaa;
+  padding-top: 10px;
+}
+#summary-total div { font-size: 24px; }
+#summary-total span { font-size: 24px; }

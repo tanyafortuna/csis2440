@@ -64,4 +64,37 @@
   function getFreeShippingCarrot() {
     return 999 - getCartSubtotal();
   }
+
+	// Order confirmation helper functions
+	function getOrderSubtotal($oid) {
+    $total = 0;
+		$items = getOrderLineItems($oid);
+
+    foreach ($items as $pid => $qty) {
+      $product = getProductFromDB($pid);
+      $total += $product['price'] * $qty;
+    }
+
+    return $total;
+  }
+
+	function getOrderShipping($oid) {
+    $total = getOrderSubtotal($oid);
+    if ($total >= 999)
+      return 0;
+    else {
+      return max(5.99, $total * .05);
+    }
+  }
+
+  function getOrderTax($oid) {
+    $total = getOrderSubtotal($oid);
+    return $total * .07;
+  }
+
+	function getOrderTotal($oid) {
+    return getOrderSubtotal($oid) + 
+			getOrderShipping($oid) + 
+			getOrderTax($oid);
+  }
 ?>
