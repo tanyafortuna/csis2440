@@ -92,12 +92,22 @@
 		$statement->bind_param("ss", $u, $p);
 		$statement->execute();
 
+    // create and run command
+    $sql = "SELECT * FROM users WHERE username = ?;";
+    $statement = $conn->prepare($sql);
+		$statement->bind_param("s", $u);
+		$statement->execute();
+
+    // get results
+    $result = $statement->get_result();
+
     // close connection
     $statement->close();
 		$conn->close();
 
     // set session
     $_SESSION['granted'] = true;
+    $_SESSION['uid'] = ($result->fetch_assoc())['id'];
   }
 
   function getProductFromDB($id) {
