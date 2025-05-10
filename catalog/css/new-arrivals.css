@@ -5,6 +5,7 @@ section#new-arrivals {
   background-color: #ECE9DC;
   letter-spacing: 1px;
   padding: 35px;
+  min-height: calc(100vh - 415px);
 }
 section#new-arrivals h1 {
   font-size: 36px;
@@ -22,7 +23,6 @@ section#new-arrivals h1 {
   row-gap: 25px;
   column-gap: 15px;
   width: 85vw;
-  height: calc(100vh - 580px);
   justify-content: center;
   align-items: center;
   margin: 0 auto;

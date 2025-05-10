@@ -5,6 +5,7 @@ section#contact {
   background-color: #ECE9DC;
   letter-spacing: 1px;
   padding: 35px;
+  min-height: calc(100vh - 415px);
 }
 section#contact h1 {
   font-size: 36px;
@@ -18,7 +19,6 @@ section#contact h1 {
   grid-template-columns: auto 255px;
   gap: 50px;
   margin: 40px auto;
-  height: calc(100vh - 560px);
 }
 
 #contact-us .icon {

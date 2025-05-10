@@ -31,7 +31,7 @@
   echo '</div>';
   
   echo '<div>';
-  echo '<p class="footer-blurb copyright no-bottom"><span class="copyright-icon">©</span> 1935 - 2025 ACME Corporation. All Rights Reserved.</p>';
+  echo '<p class="footer-blurb copyright"><span class="copyright-icon">©</span> 1935 - 2025 ACME Corporation. All Rights Reserved.</p>';
   echo '</div>';
   echo '</footer>';
 ?>

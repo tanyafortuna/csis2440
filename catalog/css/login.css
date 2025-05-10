@@ -5,7 +5,7 @@ section#login {
   background-color: #ECE9DC;
   letter-spacing: 1px;
   padding: 35px;
-  min-height: calc(100vh - 340px);
+  min-height: calc(100vh - 415px);
 }
 section#login h1 {
   font-size: 36px;
