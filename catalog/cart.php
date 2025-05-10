@@ -160,38 +160,4 @@
     echo '</span></div>';
     echo '</div>';
   }
-
-  function getCartSubtotal() {
-    $total = 0;
-
-    foreach ($_SESSION['cart'] as $id => $qty) {
-      $product = getProductFromDB($id);
-      $total += $product['price'] * $qty;
-    }
-
-    return $total;
-  }
-
-  function getCartShipping() {
-    $total = getCartSubtotal();
-    if ($total >= 999)
-      return 0;
-    else {
-      return max(5.99, $total * .1);
-    }
-  }
-
-  function getCartTax() {
-    $total = getCartSubtotal();
-    return $total * .07;
-  }
-
-  function getCartTotal() {
-    return getCartSubtotal() + getCartShipping() + getCartTax();
-  }
-
-  function getFreeShippingCarrot() {
-    return 999 - getCartSubtotal();
-  }
-
 ?>
