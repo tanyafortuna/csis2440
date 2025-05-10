@@ -17,6 +17,23 @@
 		return hash('sha512', $u.$word.$u);
 	}
 
+  // Adds product/qty to cart session variable
+  function addItemToSession($pid, $pqty) {
+    $found = false;
+
+    if (isset($_SESSION['cart'])) {
+      foreach($_SESSION['cart'] as $id => $qty) {
+        if ($id == $pid) { 
+          $_SESSION['cart'][$id] += $pqty; 
+          $found = true;
+        }
+      }
+    }
+    else $_SESSION['cart'] = array(); 
+    
+    if (!$found) { $_SESSION['cart'] += array($pid => (int) $pqty); }
+  }
+
 	// Process an order
 	function processOrder($oid) {
 		$date = date("n/j/y");

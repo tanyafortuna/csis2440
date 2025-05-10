@@ -22,8 +22,10 @@
   }
   else if (isset($_POST['submit']) && !checkIfUsernameExists()) {
     $acctExists = false;
-    createAccount();
     $acctCreated = true;
+    createAccount();
+    addItemtoSession($_GET['pid'], $_GET['qty']);
+    header('location: cart.php');
   }
 ?>
 
@@ -74,9 +76,18 @@
 
   function displayForm($acctExists) {
     echo '<h1>INSIDER ACCESS STARTS HERE</h1>';
-    echo '<p class="login-blurb">Create an account to quickly place orders and stay ready for whatever your next plan demands.</p>';
+    if (!isset($_GET['pid'])) {
+      echo '<p class="login-blurb">Create an account to quickly place orders and stay ready for whatever your next plan demands.</p>';
+    }
+    else {
+      echo '<p class="login-blurb">Your next big idea is teetering on the edge — sign up and give it the final push into your cart.</p>';
+    }
+
     echo '<div id="login-form">';
-    echo '<form id="create-account-form" method="post">';
+    if (isset($_GET['pid']))
+      echo '<form id="create-account-form"method="post" action="create-account.php?pid='.$_GET['pid'].'&qty='.$_GET['qty'].'">';
+    else
+      echo '<form id="create-account-form" method="post">';
 
     // Username field
     echo '<div class="input">';
@@ -114,6 +125,11 @@
 
     echo '</form>';
     echo '</div>';
-    echo '<p class="login-blurb short">Have an account? <a href="login.php">Sign in</a></p>';
+    echo '<p class="login-blurb short">Have an account? ';
+    if (isset($_GET['pid'])) 
+      echo '<a href="login.php?pid='.$_GET['pid'].'&qty='.$_GET['qty'].'">';
+    else 
+      echo '<a href="login.php">';
+    echo 'Sign in</a></p>';
   }
 ?>

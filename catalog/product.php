@@ -12,24 +12,13 @@
     $pid = $_POST['product-id'];
     $pqty = $_POST['product-qty'];
     
-    $found = false;
-    if (isset($_SESSION['cart'])) {
-      foreach($_SESSION['cart'] as $id => $qty) {
-        if ($id == $pid) { 
-          $_SESSION['cart'][$id] += $pqty; 
-          $found = true;
-        }
-      }
+    if (isGranted()) {
+      addItemtoSession($pid, $pqty);
+      header('location: cart.php');
     }
-    else $_SESSION['cart'] = array(); 
-    
-    if (!$found) {
-      $_SESSION['cart'] += array($pid => (int) $pqty);
-    }
-    
-    header('location: cart.php');
+    else header('location: login.php?pid='.$pid.'&qty='.$pqty);
   }
-
+  
   // error reporting
   if ($_SERVER['HTTP_HOST'] == 'localhost')
   {
@@ -39,7 +28,6 @@
 
   // product info
   $product = getProductFromDB($_GET['id']);
-
 ?>
 
 
@@ -90,7 +78,9 @@
                 </div>
               </div>
               <div class="button-container" id="add-to-cart">
-                <input type="submit" class="button" id="buy-now" name="buy-now" value="ADD TO CART">
+                <input type="submit" class="button" id="buy-now" name="buy-now"
+                <?php echo (isGranted() ? 'value="ADD TO CART"' : 'value="LOG IN & ADD TO CART"'); ?>
+                >
               </div>
               <input type="hidden" id="product-id" name="product-id" value="<?php echo $_GET['id'] ?>">
               <input type="hidden" id="product-qty" name="product-qty" value="1">

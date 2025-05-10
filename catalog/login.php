@@ -2,11 +2,21 @@
   session_start();
   include_once('includes/db.php');
   include_once('includes/functions.php');
-  if (isset($_POST['submit']) && !isValidAuth())
-    $error = 'Invalid login. Please try again.';
-  else
-    $error = '';
   if (isGranted()) header('location: account.php');
+
+  // process login attempt
+  $error = '';
+  if (isset($_POST['submit'])) {
+    if(!isValidAuth())
+      $error = 'Invalid login. Please try again.';
+    else {
+      if (isset($_GET['pid'])) {
+        addItemtoSession($_GET['pid'], $_GET['qty']);
+        header('location: cart.php');
+      }
+      else header('location: account.php');
+    }
+  }
 
   // error reporting
   if ($_SERVER['HTTP_HOST'] == 'localhost')
@@ -32,10 +42,21 @@
   <main>
     <section id="login">
       <h1>WELCOME BACK, ACME INSIDER</h1>
-      <p class="login-blurb">Sign in to place new orders, review past purchases, and stay one step ahead of the mayhem.</p> 
-
+      <?php
+        if (!isset($_GET['pid'])) {
+          echo '<p class="login-blurb">Sign in to place new orders, review past purchases, and stay one step ahead of the mayhem.</p>';
+        }
+        else {
+          echo '<p class="login-blurb">Your next big idea is teetering on the edge — log in and give it the final push into your cart.</p>';
+        }
+      ?>
       <div id="login-form">
-        <form method="post">
+        <form method="post"
+        <?php 
+          if (isset($_GET['pid'])) 
+            echo '<form method="post" action="login.php?pid='.$_GET['pid'].'&qty='.$_GET['qty'].'">';
+          else echo '<form method="post">'; 
+        ?>
           <div class="input">
             <label for="username">Username:</label>
             <input type="text" name="username" id="username" class="field" maxlength="20"
@@ -60,7 +81,13 @@
         </form>
       </div>
 
-      <p class="login-blurb short">Need an account? <a href="create-account.php">Sign up now</a></p> 
+      <p class="login-blurb short">Need an account? <a 
+      <?php 
+        if (isset($_GET['pid']))
+          echo 'href="create-account.php?pid='.$_GET['pid'].'&qty='.$_GET['qty'].'"';
+        else
+          echo 'href="create-account.php"';
+      ?>>Sign up now</a></p> 
     </section>
   </main>
   
