@@ -6,7 +6,7 @@
     $error = 'Invalid login. Please try again.';
   else
     $error = '';
-  if (isGranted()) header('location: .');
+  if (isGranted()) header('location: account.php');
 
   // error reporting
   if ($_SERVER['HTTP_HOST'] == 'localhost')

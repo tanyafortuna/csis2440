@@ -217,4 +217,29 @@
     // return result
     return $results;
   }
+
+  function getUserOrders($uid) {
+    // get connection
+    $conn = connectToDB();
+
+    // create and run command
+    $sql = "SELECT * FROM orders WHERE user_id = ? ORDER BY id DESC;";
+    $statement = $conn->prepare($sql);
+    $statement->bind_param("i", $uid);
+    $statement->execute();
+
+    // get result
+    $result = $statement->get_result();
+    $results = array();
+    while ($x = $result->fetch_assoc()) {
+      $results += array($x['id'] => $x['order_date']);
+    }
+
+    // close connection
+    $statement->close();
+    $conn->close();
+
+    // return result
+    return $results;
+  }
   ?>

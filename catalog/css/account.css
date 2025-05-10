@@ -1,24 +1,25 @@
-/*                            */
-/* Order confirmation section */
-/*                            */
-section#order-confirmation {
+/*                 */
+/* Account section */
+/*                 */
+section#account {
   background-color: #ECE9DC;
   letter-spacing: 1px;
   padding: 35px 0;
   min-height: calc(100vh - 340px);
 }
-section#order-confirmation h1 {
+section#account h1 {
   font-size: 36px;
   text-align: center;
   margin: 25px;
 }
 
-#order-blurbs {
+#your-account {
   width: 1000px;
   margin: 40px auto;
 }
-p.order-blurb {
+p.account-blurb {
   width: 650px;
   margin: 30px auto 0 auto;
   text-align: center;
+  padding-bottom: 15px;
 }
