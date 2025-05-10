@@ -17,6 +17,20 @@
 		return hash('sha512', $u.$word.$u);
 	}
 
+	// Process an order
+	function processOrder($oid) {
+		$date = date("n/j/y");
+		$uid = $_SESSION['uid'];
+
+		addOrderToDB($oid, $date, $uid);
+
+		foreach ($_SESSION['cart'] as $id => $qty) {
+      addLineItemToDB($oid, $id, $qty);
+    }
+
+		unset($_SESSION['cart']);
+	}
+
 	// Cart helper functions
 	function getCartSubtotal() {
     $total = 0;

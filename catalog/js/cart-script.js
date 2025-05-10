@@ -105,7 +105,7 @@ function getCartShipping(subtotal) {
   if (subtotal >= 999)
     return 0;
   else
-    return Math.max(5.99, subtotal * .1);
+    return Math.max(5.99, subtotal * .05);
 }
 
 function getCartTotal(subtotal) {

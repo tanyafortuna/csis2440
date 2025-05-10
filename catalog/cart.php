@@ -118,7 +118,13 @@
     echo '</p>';
 
     echo '<div id="checkout" class="button-container">';
-    echo '<a href="#">CHECKOUT</a>';
+    echo '<form method="post" action="order-confirmation.php">';
+    echo '<input type="hidden" name="oid" id="oid" value="';
+    echo getLargestOrderNum() + rand(9, 19);
+    echo '">';
+    echo '<input type="submit" class="button" id="checkout" name="checkout" value="CHECKOUT">';
+    echo '</form>';
+
     echo '</div>';
     echo '</div>';
     echo '</div>';
