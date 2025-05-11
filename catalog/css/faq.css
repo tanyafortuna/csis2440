@@ -1,0 +1,46 @@
+/*             */
+/* FAQ section */
+/*             */
+#faq-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+
+#faq-content .icon { 
+  height: 22px; 
+  padding: 6px 0 0 4px;
+  transition: all .2s;
+}
+#faq-content .icon.flip {
+  transform: rotate(-180deg);
+  padding: 0 4px 6px 0;
+}
+
+h2 { margin-bottom: 30px; }
+
+h3.accordion {
+  border-radius: 23px;
+  cursor: pointer;
+  background-color: #dad4bb;
+  margin: 10px 0;
+  padding-bottom: 5px;
+}
+h3.active, h3.accordion:hover {
+  text-decoration: underline;
+}
+
+p.response {
+  padding: 0 22px;
+  overflow: hidden;
+  text-align: center;
+  font-size: 18px;
+  height: 0;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: all .2s;
+}
+p.response.show {
+  height: 46px;
+  transform: scaleY(1);
+}

@@ -73,6 +73,7 @@
   echo '<a href="new-arrivals.php">NEW ARRIVALS</a>';
   echo '<a href="about.php">ABOUT US</a>';
   echo '<a href="contact.php">CONTACT US</a>';
+  echo '<a id="faq-link" href="faq.php">FAQ</a>';
   echo '</div>';
 
   echo '</div>';

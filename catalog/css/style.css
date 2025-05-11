@@ -20,16 +20,15 @@ section.common {
 }
 section.common.height { min-height: calc(100vh - 415px); }
 
-h1.common {
-  font-size: 36px;
-  text-align: center; 
-}
+h1.common, h2.common, h3.common { text-align: center;  }
+
+h1.common { font-size: 36px; }
 h1.common.padded { margin: 20px; }
 
-h2.common {
-  font-size: 30px;
-  text-align: center; 
-}
+h2.common { font-size: 30px; }
+
+h3.common { font-size: 21px; }
+h3.common.padded { padding: 10px; }
 
 div.common.subsection {
   width: 1000px;

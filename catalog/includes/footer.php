@@ -8,18 +8,13 @@
   echo '<div>';
   echo '<h6>SITE LINKS</h6>';
   echo '<p class="footer-blurb">';
+  echo '<a href="faq.php">FAQ</a></p>';
+  echo '<p class="footer-blurb">';
   echo '<a href="about.php">About Us</a></p>';
   echo '<p class="footer-blurb">';
   echo '<a href="catalog.php">All Products</a></p>';
   echo '<p class="footer-blurb">';
   echo '<a href="new-arrivals.php">New Arrivals</a></p>';
- 
-  if (isGranted()) {
-    echo '<p class="footer-blurb">';
-    echo '<a href="cart.php">Cart</a></p>';
-    echo '<p class="footer-blurb">';
-    echo '<a href="account.php">Account</a></p>';
-  }  
 
   echo '</div>';
   echo '<div>';
