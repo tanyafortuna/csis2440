@@ -1,7 +1,7 @@
 /*             */
 /* Ads section */
 /*             */
-section#ads a { width: fit-content; }
+section#all-products a { width: fit-content; }
 
 #shop-all {
   display: block;
@@ -15,14 +15,14 @@ section#ads a { width: fit-content; }
   margin-left: 5px;
   padding-top: 3px;
 }
-#ads-images {
+#a-images {
   width: 820px;
   margin: 35px auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 60px;
 }
-#ads .ad-img {
+#all-products .a-img {
   height: 300px;
   width: 250px;
   border-radius: 20px;
