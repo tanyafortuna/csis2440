@@ -7,7 +7,6 @@
   echo '<p id="quality-products">QUALITY PRODUCTS<br>SINCE 1935</p>';
   echo '<a id="shop-now-a" href="#highlighted">';
   echo '<p id="shop-now-p">SHOP NOW ';
-  // echo '<img class="icon" src="img/icons/down-arrow-white.png">';
   echo '</p>';
   echo '</a>';
   echo '</div>';

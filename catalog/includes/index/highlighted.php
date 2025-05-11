@@ -2,7 +2,7 @@
   echo '<section id="highlighted" class="common">';
   echo '<h1 class="common">NOW AVAILABLE</h1>';
   echo '<div id="highlighted-product" class="common subsection">';
-  echo '<img id="iron-carrot-ad" src="img/ad-iron-carrot.webp">';
+  echo '<img id="iron-carrot-ad" src="img/iron-carrot.webp">';
   echo '<img id="newspaper" src="img/newspaper.webp">';
   echo '<p id="review-1">"It\'s not your garden-variety gadget!"<BR>- Popular Mechanics</p>';
   echo '<p id="review-2">“Aerodynamic and slightly crunchy. What more could you want?” - Business Insider</p>';
