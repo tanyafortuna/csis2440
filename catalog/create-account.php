@@ -24,8 +24,10 @@
     $acctExists = false;
     $acctCreated = true;
     createAccount();
-    addItemtoSession($_GET['pid'], $_GET['qty']);
-    header('location: cart.php');
+    if (isset($_GET['pid'])) { 
+      addItemtoSession($_GET['pid'], $_GET['qty']);
+      header('location: cart.php');
+    }
   }
 ?>
 
