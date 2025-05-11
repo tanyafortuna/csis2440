@@ -60,7 +60,7 @@
     echo '<p class="cart-blurb common">Looking good — your cart\'s locked, loaded, and fully primed for high-octane mischief. These ACME-grade contraptions are one step away from joining your next brilliant (or baffling) plan. All systems go - we\'re ready when you are.</p>';
     echo '<div id="cart-detail" class="common subsection">';
     echo '<div class="left-side">';
-    echo '<div id="cart-header">';
+    echo '<div id="cart-header" class="common-border-bottom">';
     echo '<p></p>';
 
     echo '<p id="cart-header-name">PRODUCT NAME</p>';
@@ -76,8 +76,7 @@
     echo '</div>';
 
     echo '<div class="right-side">';
-    echo '<div id="summary-heading">CART SUMMARY</div>';
-
+    echo '<div id="summary-heading" class="common-border-bottom">CART SUMMARY</div>';
 
     echo '<div class="summary" id="summary-subtotal">';
     echo '<div class="summary-left">Subtotal</div>';
@@ -102,7 +101,7 @@
     echo number_format(getCartTax(), 2);
     echo '</span></div>';
     echo '</div>';
-    echo '<div class="summary" id="summary-total">';
+    echo '<div class="summary common-border-top" id="summary-total">';
     echo '<div class="summary-left">Grand Total</div>';
     echo '<div class="summary-right">$<span id="cart-total">';
     echo number_format(getCartTotal(), 2);
@@ -134,7 +133,7 @@
   function printCartItem($id, $qty) {
     $product = getProductFromDB($id);
 
-    echo '<div class="cart-item" id="cart-item-'.$id.'">';
+    echo '<div class="cart-item common-border-bottom" id="cart-item-'.$id.'">';
     echo '<img class="cart-item-img" src="'.$product['image'].'">';
 
     echo '<div class="cart-item-name">';

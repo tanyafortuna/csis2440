@@ -47,3 +47,6 @@ p.common {
   text-align: center;
   padding-bottom: 15px;
 }
+
+.common-border-top { border-top: 2px solid #d1caaa; }
+.common-border-bottom { border-bottom: 2px solid #d1caaa; }

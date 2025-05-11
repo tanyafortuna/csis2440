@@ -15,7 +15,6 @@
   display: grid;
   grid-template-columns: 1.5fr 1.5fr 1fr 1fr;
   padding: 10px;
-  border-bottom: 2px solid #d1caaa;
 }
 
 /*           */
@@ -34,7 +33,6 @@
 .order-item-price-total { text-align: end; }
 
 .order-subtotal {
-  border-top: 2px solid #d1caaa;
   padding: 10px;
   text-align: end;
 }
@@ -46,7 +44,6 @@
   height: 47px;
   padding: 10px;
   text-align: center;
-  border-bottom: 2px solid #d1caaa;
 }
 .right-side .summary {
   display: grid;
@@ -56,7 +53,6 @@
 .summary-right { text-align: end; }
 
 #summary-total {
-  border-top: 2px solid #d1caaa;
   padding-top: 10px;
 }
 #summary-total div { font-size: 24px; }

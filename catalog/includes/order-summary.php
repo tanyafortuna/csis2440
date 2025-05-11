@@ -33,7 +33,7 @@
 
     // Left side (items)
     echo '<div class="left-side">';
-    echo '<div id="order-header">';
+    echo '<div id="order-header" class="common-border-bottom">';
     echo '<p id="order-header-name">PRODUCT NAME</p>';
     echo '<p id="order-header-each">EACH</p>';
     echo '<p id="order-header-qty">QTY</p>';
@@ -47,7 +47,7 @@
     
     // Right side (summary)
     echo '<div class="right-side">';
-    echo '<div id="summary-heading">ORDER SUMMARY</div>';
+    echo '<div id="summary-heading" class="common-border-bottom">ORDER SUMMARY</div>';
     
     echo '<div class="summary" id="summary-subtotal">';
     echo '<div class="summary-left">Subtotal</div>';
@@ -81,7 +81,7 @@
     echo '</div>';
     echo '</div>';
 
-    echo '<div class="summary" id="summary-total">';
+    echo '<div class="summary common-border-top" id="summary-total">';
     echo '<div class="summary-left">Grand Total</div>';
     echo '<div class="summary-right">$';
     echo '<span id="order-total">';

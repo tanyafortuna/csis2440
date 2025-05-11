@@ -26,9 +26,7 @@ h3.accordion {
   margin: 10px 0;
   padding-bottom: 5px;
 }
-h3.active, h3.accordion:hover {
-  text-decoration: underline;
-}
+h3.active, h3.accordion:hover { text-decoration: underline; }
 
 p.response {
   padding: 0 22px;

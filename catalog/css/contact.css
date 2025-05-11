@@ -5,7 +5,6 @@
   display: grid;
   grid-template-columns: auto 300px;
   gap: 75px;
-  /* align-items: center; */
 }
 
 #contact-us .icon { height: 30px; }
