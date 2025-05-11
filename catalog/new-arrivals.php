@@ -19,6 +19,7 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="css/nav.css">
   <link rel="stylesheet" type="text/css" href="css/footer.css">
+  <link rel="stylesheet" type="text/css" href="css/ads.css">
   <link rel="stylesheet" type="text/css" href="css/new-arrivals.css">
   <link rel="stylesheet" type="text/css" href="css/product-card.css">
   <title>ACME Corporation</title>
@@ -36,12 +37,15 @@
       <div id="new-products" class="common subsection four-products">
         <?php
           echo generateProductCard(13);
-          echo generateProductCard(12);
-          echo generateProductCard(3);
-          echo generateProductCard(18);
+          echo generateProductCard(10);
+          echo generateProductCard(19);
+          echo generateProductCard(11);
         ?>
       </div>
+      
+      <?php include_once("includes/ads.php"); ?>
     </section>
+
   </main>
 
   <?php include_once("includes/footer.php"); ?>

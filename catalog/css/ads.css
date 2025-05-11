@@ -20,7 +20,7 @@ section#ads a { width: fit-content; }
   margin: 35px auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 35px;
+  gap: 60px;
 }
 #ads .ad-img {
   height: 300px;

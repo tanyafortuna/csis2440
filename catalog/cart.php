@@ -36,7 +36,9 @@
         else
           echo printEmptyCart();
       ?>
+      <?php include_once("includes/ads.php"); ?>
     </section>
+    
   </main>
   
   <?php include_once("includes/footer.php"); ?>
@@ -55,6 +57,7 @@
 
   function printCartContents() {
     echo '<h1 class="common padded">YOUR CART</h1>';
+    echo '<p class="cart-blurb common">Looking good — your cart\'s locked, loaded, and fully primed for high-octane mischief. These ACME-grade contraptions are one step away from joining your next brilliant (or baffling) plan. All systems go - we\'re ready when you are.</p>';
     echo '<div id="cart-detail" class="common subsection">';
     echo '<div class="left-side">';
     echo '<div id="cart-header">';
