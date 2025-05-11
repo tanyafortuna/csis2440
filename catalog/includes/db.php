@@ -152,14 +152,21 @@
     else return 1947;
   }
 
-  function addOrderToDB($oid, $date, $uid) {
+  function addOrderToDB($oid, $date, $uid, $promo) {
     // get connection
     $conn = connectToDB();
 
     // create and run command
-    $sql = "INSERT INTO orders (id, order_date, user_id) VALUES (?, ?, ?);";
-    $statement = $conn->prepare($sql);
-    $statement->bind_param("isi", $oid, $date, $uid);
+    if (!isset($_SESSION['discount_code'])) {
+      $sql = "INSERT INTO orders (id, order_date, user_id) VALUES (?, ?, ?);";
+      $statement = $conn->prepare($sql);
+      $statement->bind_param("isi", $oid, $date, $uid);
+    }
+    else {
+      $sql = "INSERT INTO orders (id, order_date, user_id, promo_code) VALUES (?, ?, ?, ?);";
+      $statement = $conn->prepare($sql);
+      $statement->bind_param("isis", $oid, $date, $uid, $promo);
+    }
     $statement->execute();
 
     // close connection
@@ -251,5 +258,61 @@
 
     // return result
     return $results;
+  }
+
+  function getPromoDiscount($code) {
+    // get connection
+    $conn = connectToDB();
+
+    // create and run command
+    $sql = "SELECT * FROM promo_codes WHERE name = ?;";
+    $statement = $conn->prepare($sql);
+    $statement->bind_param("s", $code);
+    $statement->execute();
+
+    // get results
+    $result = $statement->get_result();
+    
+    // close connection
+    $statement->close();
+    $conn->close();
+
+    // check results
+    if (mysqli_num_rows($result)) 
+      $_SESSION['discount_code'] = $code;
+      $_SESSION['discount_amt'] = intval(($result->fetch_assoc())['discount']);
+  }
+
+  function getDiscountForOrder($oid) {
+    // get connection
+    $conn = connectToDB();
+
+    // create and run command (get promo code)
+    $sql = "SELECT * FROM orders WHERE id = ?;";
+    $statement = $conn->prepare($sql);
+    $statement->bind_param("i", $oid);
+    $statement->execute();
+
+    // get result
+    $result = $statement->get_result();
+    $code = ($result ->fetch_assoc())['promo_code']; 
+    if (is_null($code)) return 0; //no code was used
+
+    // create and run command (get promo amount)
+    $sql = "SELECT * FROM promo_codes WHERE name = ?;";
+    $statement = $conn->prepare($sql);
+    $statement->bind_param("s", $code);
+    $statement->execute();
+
+    // get result
+    $result = $statement->get_result();
+    $discount = ($result ->fetch_assoc())['discount'];
+
+    // close connection
+    $statement->close();
+    $conn->close();
+
+    // return result
+    return $discount;
   }
   ?>

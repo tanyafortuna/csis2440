@@ -101,12 +101,47 @@
 #summary-total div { font-size: 24px; }
 #summary-total span { font-size: 24px; }
 
-#free-shipping-carrot {
-  font-size: 14px;
+/*             */
+/* Alerts area */
+/*             */
+div.alerts {
+  margin: 25px 0;
   text-align: center;
-  margin: 50px 0 25px 0;
+  font-size: 14px;
 }
-#free-shipping-carrot span {
+#free-shipping-carrot, #promo-success, #promo-success span { 
+  font-size: 14px; 
+  text-align: center;
+  margin: 3px 0;
+} 
+#free-shipping-carrot span, #promo-error {
   color: #F22233;
   font-size: 14px;
+}
+
+
+/*                 */
+/* Promo code area */
+/*                 */
+#promo {
+  margin: 30px 0;
+  padding-top: 10px;
+  text-align: center;
+}
+
+#promo p { margin: 10px 0; }
+
+#promo form {
+  display: grid;
+  grid-template-columns: 130px 130px;
+  justify-content: space-between;
+}
+
+#code {
+  border-radius: 10px;
+  width: 130px;
+  box-shadow:  0px 0px 5px #d1caaa;
+  background-color: #ECE9DC;
+  border: 1px solid #d1caaa;
+  text-indent: 10px;
 }

@@ -42,24 +42,28 @@ function updateCartItemQty(up, id) {
 function updateCartPage(id, newQty, qtyChg) {
   let cartItemDiv = document.getElementById("cart-item-" + id);
   let qtyDiv = document.getElementById("qty-count-" + id);
+  let cartDiscountAmtDiv = document.getElementById("discount-amt");
   let itemPriceDiv = document.getElementById("cart-item-price-each-" + id);
   let itemTotalDiv = document.getElementById("cart-item-price-total-" + id);
   let cartSubtotalDiv = document.getElementById("cart-subtotal");
+  let cartDiscountDiv = document.getElementById("cart-discount");
   let cartDeliveryDiv = document.getElementById("cart-delivery");
   let cartTaxDiv = document.getElementById("cart-tax");
   let cartTotalDiv = document.getElementById("cart-total");
   let freeShipCarrot = document.getElementById("free-shipping-carrot");
 
-  // update page 
+  // get subtotal to see if page should be reloaded (subtotal = 0) 
   let subtotal = formatNicely(
     qtyChg * getNumFrom(itemPriceDiv.innerText) +
     getNumFrom(cartSubtotalDiv.innerText)
   );
-  if (subtotal == 0) window.location.href = 'cart.php';
+
+  // do page update
+  if (subtotal == 0)
+    window.location.href = 'cart.php';
+  // else update page
   else {
-    cartSubtotalDiv.innerText = subtotal;
-
-
+    // remove/update line item as needed
     if (newQty == 0) { cartItemDiv.remove(); }
     else {
       qtyDiv.innerText = newQty;
@@ -67,6 +71,14 @@ function updateCartPage(id, newQty, qtyChg) {
         newQty * getNumFrom(itemPriceDiv.innerText)
       );
     }
+
+    // update cart summary fields
+    cartSubtotalDiv.innerText = subtotal;
+
+    cartDiscountDiv.innerText = formatNicely(
+      getCartDiscount(getNumFrom(cartSubtotalDiv.innerText),
+        cartDiscountAmtDiv.innerText)
+    );
 
     cartDeliveryDiv.innerText = formatNicely(
       getCartShipping(getNumFrom(cartSubtotalDiv.innerText))
@@ -77,7 +89,8 @@ function updateCartPage(id, newQty, qtyChg) {
     );
 
     cartTotalDiv.innerText = formatNicely(
-      getCartTotal(getNumFrom(cartSubtotalDiv.innerText))
+      getCartTotal(getNumFrom(cartSubtotalDiv.innerText),
+        cartDiscountAmtDiv.innerText)
     );
 
     if (subtotal < 999) {
@@ -97,8 +110,11 @@ function formatNicely(n) {
   return n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
 
-function getCartTax(subtotal) {
-  return subtotal * .07;
+function getCartDiscount(subtotal, discount) {
+  if (discount > 0)
+    return subtotal * discount / 100;
+  else
+    return 0;
 }
 
 function getCartShipping(subtotal) {
@@ -108,8 +124,13 @@ function getCartShipping(subtotal) {
     return Math.max(5.99, subtotal * .05);
 }
 
-function getCartTotal(subtotal) {
-  return subtotal +
+function getCartTax(subtotal) {
+  return subtotal * .07;
+}
+
+function getCartTotal(subtotal, discount) {
+  return subtotal -
+    getCartDiscount(subtotal, discount) +
     getCartShipping(subtotal) +
     getCartTax(subtotal);
 }

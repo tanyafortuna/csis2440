@@ -38,14 +38,17 @@
 	function processOrder($oid) {
 		$date = date("n/j/y");
 		$uid = $_SESSION['uid'];
+    $promo = $_SESSION['discount_code'];
 
-		addOrderToDB($oid, $date, $uid);
+		addOrderToDB($oid, $date, $uid, $promo);
 
 		foreach ($_SESSION['cart'] as $id => $qty) {
       addLineItemToDB($oid, $id, $qty);
     }
 
 		unset($_SESSION['cart']);
+		unset($_SESSION['discount_code']);
+		unset($_SESSION['discount_amt']);
 	}
 
 	// Cart helper functions
@@ -60,8 +63,14 @@
     return $total;
   }
 
+  function getCartDiscount() {
+    if (isset($_SESSION['discount_code']))
+      return getCartSubtotal() * $_SESSION['discount_amt'] / 100;
+    else return 0;
+  }
+
   function getCartShipping() {
-    $total = getCartSubtotal();
+    $total = getCartSubtotal() - getCartDiscount();
     if ($total >= 999)
       return 0;
     else {
@@ -70,16 +79,16 @@
   }
 
   function getCartTax() {
-    $total = getCartSubtotal();
+    $total = getCartSubtotal() - getCartDiscount();
     return $total * .07;
   }
 
   function getCartTotal() {
-    return getCartSubtotal() + getCartShipping() + getCartTax();
+    return getCartSubtotal() - getCartDiscount() + getCartShipping() + getCartTax();
   }
 
   function getFreeShippingCarrot() {
-    return 999 - getCartSubtotal();
+    return 999 - (getCartSubtotal() - getCartDiscount());
   }
 
 	// Order confirmation helper functions
@@ -95,8 +104,14 @@
     return $total;
   }
 
+  function getOrderDiscount($oid) {
+    $discount = getDiscountForOrder($oid);
+    // $discount = 0;
+    return getOrderSubtotal($oid) * $discount / 100;
+  }
+
 	function getOrderShipping($oid) {
-    $total = getOrderSubtotal($oid);
+    $total = getOrderSubtotal($oid) - getOrderDiscount($oid);
     if ($total >= 999)
       return 0;
     else {
@@ -105,12 +120,13 @@
   }
 
   function getOrderTax($oid) {
-    $total = getOrderSubtotal($oid);
+    $total = getOrderSubtotal($oid) - getOrderDiscount($oid);
     return $total * .07;
   }
 
 	function getOrderTotal($oid) {
-    return getOrderSubtotal($oid) + 
+    return getOrderSubtotal($oid) -
+      getOrderDiscount($oid) + 
 			getOrderShipping($oid) + 
 			getOrderTax($oid);
   }

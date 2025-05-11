@@ -9,6 +9,11 @@
     error_reporting(-1);
     ini_set( 'display_errors', 1 );
   }
+
+  // process promo code form
+  if (isset($_POST['apply-discount'])) {
+    getPromoDiscount(strtoupper($_POST['code']));
+  }
 ?>
 
 
@@ -59,6 +64,8 @@
     echo '<h1 class="common padded">YOUR CART</h1>';
     echo '<p class="cart-blurb common">Looking good — your cart\'s locked, loaded, and fully primed for high-octane mischief. These ACME-grade contraptions are one step away from joining your next brilliant (or baffling) plan. All systems go - we\'re ready when you are.</p>';
     echo '<div id="cart-detail" class="common subsection">';
+
+    // Left side
     echo '<div class="left-side">';
     echo '<div id="cart-header" class="common-border-bottom">';
     echo '<p></p>';
@@ -68,32 +75,35 @@
     echo '<p id="cart-header-qty">QTY</p>';
     echo '<p id="cart-header-total">TOTAL</p>';
     echo '</div>';
-    
+
     foreach ($_SESSION['cart'] as $id => $qty) {
       printCartItem($id, $qty);
     }
 
     echo '</div>';
 
+    // Right side
     echo '<div class="right-side">';
     echo '<div id="summary-heading" class="common-border-bottom">CART SUMMARY</div>';
 
+    // Summary area
     echo '<div class="summary" id="summary-subtotal">';
     echo '<div class="summary-left">Subtotal</div>';
     echo '<div class="summary-right">$<span id="cart-subtotal">';
     echo number_format(getCartSubtotal(), 2);
     echo '</span></div>';
     echo '</div>';
-
+    echo '<div class="summary" id="summary-discount">';
+    echo '<div class="summary-left">Discount</div>';
+    echo '<div class="summary-right">-$<span id="cart-discount">';
+    echo number_format(getCartDiscount(), 2);
+    echo '</span></div>';
+    echo '</div>';
     echo '<div class="summary" id="summary-shipping">';
     echo '<div class="summary-left">Delivery</div>';
     echo '<div class="summary-right">$<span id="cart-delivery">';
     echo number_format(getCartShipping(), 2);
     echo '</span></div>';
-    echo '</div>';
-    echo '<div class="summary" id="summary-discount">';
-    echo '<div class="summary-left">Discount</div>';
-    echo '<div class="summary-right">-$0.00</div>';
     echo '</div>';
     echo '<div class="summary" id="summary-tax">';
     echo '<div class="summary-left">Tax</div>';
@@ -108,6 +118,8 @@
     echo '</span></div>';
     echo '</div>';
 
+    // Alerts
+    echo '<div class="alerts">';
     echo '<p id="free-shipping-carrot">';
     if (getCartSubtotal() < 999) {
       echo 'You\'re only <span>$';
@@ -116,7 +128,15 @@
     }
     else { echo 'You\'re getting free delivery!'; }
     echo '</p>';
+    
+    if (isset($_SESSION['discount_code'])) {
+      echo '<p id="promo-success">Wahoo! Enjoy your <span id="discount-amt">';
+      echo $_SESSION['discount_amt'];
+      echo '</span>% off.</p>';
+    }
+    echo '</div>';
 
+    // Checkout button
     echo '<div id="checkout" class="button-container">';
     echo '<form method="post" action="order-confirmation.php">';
     echo '<input type="hidden" name="oid" id="oid" value="';
@@ -124,9 +144,28 @@
     echo '">';
     echo '<input type="submit" class="button" id="checkout" name="checkout" value="CHECKOUT">';
     echo '</form>';
+    echo '</div>';
+    
+    // Promo code entry
+    if (!isset($_SESSION['discount_code'])) {
+      echo '<div id="promo" class="common-border-top">';
+      echo '<p>Got a promo code?</p>';
+      
+      echo '<form method="post">';
+      echo '<input type="text" id="code" name="code" maxlength="10">';
+      echo '<input type="submit" class="button smaller" id="apply-discount" name="apply-discount" value="APPLY">';
+      echo '</form>';
+      
+      if (isset($_POST['apply-discount']))
+        echo '<p id="promo-error">That one\'s not working. Try again.</p>';
 
+      echo '</div>';
+  }
+
+    // Close right side
     echo '</div>';
-    echo '</div>';
+
+    // Close container div
     echo '</div>';
   }
 

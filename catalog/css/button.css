@@ -29,3 +29,9 @@ input.button:disabled {
   color: black;
   box-shadow: none;
 }
+
+input.button.smaller {
+  width: 130px;
+  height: 30px;
+  padding: 0;
+}

@@ -57,6 +57,15 @@
     echo '</span>';
     echo '</div>';
     echo '</div>';
+
+    echo '<div class="summary" id="summary-discount">';
+    echo '<div class="summary-left">Discount</div>';
+    echo '<div class="summary-right">-$';
+    echo '<span id="order-discount">';
+    echo number_format(getOrderDiscount($oid), 2);
+    echo '</span>';
+    echo '</div>';
+    echo '</div>';
     
     echo '<div class="summary" id="summary-shipping">';
     echo '<div class="summary-left">Delivery</div>';
@@ -65,11 +74,6 @@
     echo number_format(getOrderShipping($oid), 2);
     echo '</span>';
     echo '</div>';
-    echo '</div>';
-
-    echo '<div class="summary" id="summary-discount">';
-    echo '<div class="summary-left">Discount</div>';
-    echo '<div class="summary-right">-$0.00</div>';
     echo '</div>';
     
     echo '<div class="summary" id="summary-tax">';
