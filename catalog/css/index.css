@@ -51,42 +51,38 @@ section#banner {
 /*                     */
 /* Highlighted section */
 /*                     */
-section#highlighted {
-  background-color: #ECE9DC;
-  padding-top: 35px;
-  padding-bottom: 15px;
-}
 div#highlighted-product {
   position: relative;
-  height: 710px;
-  width: 1300px;
-  margin: 0 auto;
+  /* height: 710px; */
+  height: 500px;
 }
 
-img#newspaper {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 520px;
-  border-radius: 20px;
-}
 img#iron-carrot-ad {
   position: absolute;
   bottom: 0;
   left: 0;
   border-radius: 20px;
+  height: 100%;
+}
+img#newspaper {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 300px;
+  border-radius: 20px;
 }
 p#iron-carrot-blurb {
   position: absolute;
   right: 0;
-  top: 55px;
+  top: 0px;
   font-size: 22px;
-  width: 720px;
+  letter-spacing: 0px;
+  width: 589px;
   text-align: justify;
 }
-p#iron-carrot-blurb span {
-  text-decoration: underline;
-  font-size: 26px;
+p#iron-carrot-blurb span { 
+  text-decoration: underline; 
+  font-size: 25px;
 }
 p#iron-carrot-tagline {
   position: absolute;
@@ -98,20 +94,23 @@ p#iron-carrot-tagline {
   font-size: 34px;
   text-align: center;
 }
-p#review-1, p#review-2 {
+p#review-1, p#review-2, p#review-3 {
   position: absolute;
-  left: 540px;
-  width: 220px;
+  left: 400px;
+  width: 285px;
   text-align: center;
+  font-size: 18px;
+  letter-spacing: 0px;
+  /* border: 1px solid red; */
 }
-p#review-1 { top: 475px; }
-p#review-2 { top: 575px; }
+p#review-1 { top: 295px; }
+p#review-2 { top: 360px; }
+p#review-3 { top: 425px; }
 
 #buy-now {
   position: absolute;
-  right: 0;
-  top: 260px;
-  width: 720px;
+  right: 164px;
+  top: 217px;
 }
 
 /*                 */
