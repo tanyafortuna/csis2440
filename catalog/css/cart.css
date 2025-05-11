@@ -12,6 +12,7 @@
   display: grid;
   grid-template-columns: 1fr 1.5fr .7fr 1fr .8fr;
   padding: 10px;
+  border-bottom: 2px solid #d1caaa;
 }
 
 /*           */
@@ -22,7 +23,7 @@
 
 .cart-item {
   height: 130px;
-  border-top: 2px solid #d1caaa;
+  border-bottom: 2px solid #d1caaa;
   display: grid;
   grid-template-columns: 1fr 1.5fr .7fr 1fr .8fr;
   padding: 10px;
@@ -81,12 +82,6 @@
 
 .cart-item-price-total { text-align: end; }
 
-.cart-subtotal {
-  border-top: 2px solid #d1caaa;
-  padding: 10px;
-  text-align: end;
-}
-
 /*            */
 /* Right side */
 /*            */
@@ -99,7 +94,7 @@
 .right-side .summary {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin: 13px 0;
+  margin: 10px 0;
 }
 .summary-right { text-align: end; }
 

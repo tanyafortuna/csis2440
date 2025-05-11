@@ -43,16 +43,20 @@
     $items = getOrderLineItems($oid);
     foreach ($items as $pid => $qty) { printOrderItem($pid, $qty); }
    
-    echo '<div class="order-subtotal">Subtotal: $';
-    echo '<span id="order-subtotal">';
-    echo number_format(getOrderSubtotal($oid), 2);
-    echo '</span>';
-    echo '</div>';
     echo '</div>';
     
     // Right side (summary)
     echo '<div class="right-side">';
     echo '<div id="summary-heading">ORDER SUMMARY</div>';
+    
+    echo '<div class="summary" id="summary-subtotal">';
+    echo '<div class="summary-left">Subtotal</div>';
+    echo '<div class="summary-right">$';
+    echo '<span id="order-subtotal">';
+    echo number_format(getOrderSubtotal($oid), 2);
+    echo '</span>';
+    echo '</div>';
+    echo '</div>';
     
     echo '<div class="summary" id="summary-shipping">';
     echo '<div class="summary-left">Delivery</div>';

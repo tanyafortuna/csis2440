@@ -21,6 +21,6 @@ div.right-side {
   grid-template-columns: 40px auto;
 }
 
-#mail-icon { margin-top: 45px; }
-#phone-icon { margin-top: 47px; }
-#email-icon { margin-top: 14px; }
+#mail-icon { margin-top: 8px; }
+#phone-icon { margin-top: 85px; }
+#email-icon { margin-top: 13px; }
