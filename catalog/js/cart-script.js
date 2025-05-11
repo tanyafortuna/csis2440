@@ -73,26 +73,46 @@ function updateCartPage(id, newQty, qtyChg) {
     }
 
     // update cart summary fields
+    // subtotal
     cartSubtotalDiv.innerText = subtotal;
 
-    cartDiscountDiv.innerText = formatNicely(
-      getCartDiscount(getNumFrom(cartSubtotalDiv.innerText),
-        cartDiscountAmtDiv.innerText)
-    );
+    // discount
+    if (cartDiscountAmtDiv === null) {
+      cartDiscountDiv.innerText = formatNicely(
+        getCartDiscount(getNumFrom(cartSubtotalDiv.innerText), 0)
+      );
+    }
+    else {
+      cartDiscountDiv.innerText = formatNicely(
+        getCartDiscount(getNumFrom(cartSubtotalDiv.innerText),
+          cartDiscountAmtDiv.innerText)
+      );
+    }
 
+    // delivery
     cartDeliveryDiv.innerText = formatNicely(
       getCartShipping(getNumFrom(cartSubtotalDiv.innerText))
     );
 
+    // tax
     cartTaxDiv.innerText = formatNicely(
       getCartTax(getNumFrom(cartSubtotalDiv.innerText))
     );
 
-    cartTotalDiv.innerText = formatNicely(
-      getCartTotal(getNumFrom(cartSubtotalDiv.innerText),
-        cartDiscountAmtDiv.innerText)
-    );
+    // grand total
+    if (cartDiscountAmtDiv === null) {
+      cartTotalDiv.innerText = formatNicely(
+        getCartTotal(getNumFrom(cartSubtotalDiv.innerText), 0)
+      );
+    }
+    else {
+      cartTotalDiv.innerText = formatNicely(
+        getCartTotal(getNumFrom(cartSubtotalDiv.innerText),
+          cartDiscountAmtDiv.innerText)
+      );
+    }
 
+    // free shipping carrot
     if (subtotal < 999) {
       freeShipCarrot.innerHTML = "You're only <span>$" +
         formatNicely(999 - subtotal) +
@@ -111,10 +131,7 @@ function formatNicely(n) {
 }
 
 function getCartDiscount(subtotal, discount) {
-  if (discount > 0)
-    return subtotal * discount / 100;
-  else
-    return 0;
+  return subtotal * discount / 100;
 }
 
 function getCartShipping(subtotal) {
