@@ -4,12 +4,13 @@
 #about-us {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
-  gap: 30px;
+  gap: 50px;
 }
 
 #about-us .left-side img { width: 100%; }
 
 p.about-blurb {
-  margin: 10px 10px 25px 10px;
+  margin-bottom: 25px;
   text-align: justify;
+  letter-spacing: 0px;
 }

@@ -13,28 +13,35 @@
 /*            */
 /* Common CSS */
 /*            */
-
 section.common {
   background-color: #ECE9DC;
   letter-spacing: 1px;
   padding: 15px;
 }
-
-section.height.common {
-  min-height: calc(100vh - 415px);
-}
+section.common.height { min-height: calc(100vh - 415px); }
 
 h1.common {
   font-size: 36px;
-  text-align: center;
-  margin: 20px;
+  text-align: center; 
+}
+h1.common.padded { margin: 20px; }
+
+h2.common {
+  font-size: 30px;
+  text-align: center; 
 }
 
-div.subsection.common {
+div.common.subsection {
   width: 1000px;
-  margin: 40px auto 0 auto;
+  margin: 40px auto;
 }
 
+div.common.four-products {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 53px;
+}
+  
 p.common {
   width: 650px;
   margin: 30px auto;

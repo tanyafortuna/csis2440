@@ -114,14 +114,6 @@ p#review-2 { top: 575px; }
   width: 720px;
 }
 
-/*                  */
-/* Trending section */
-/*                  */
-#trending-products {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-}
-
 /*                 */
 /* Reasons section */
 /*                 */

@@ -3,8 +3,9 @@
 /*                 */
 #contact-us {
   display: grid;
-  grid-template-columns: auto 255px;
-  gap: 125px;
+  grid-template-columns: auto 300px;
+  gap: 75px;
+  /* align-items: center; */
 }
 
 #contact-us .icon { height: 30px; }
@@ -12,4 +13,14 @@
 p.contact-blurb {
   margin: 10px 0 20px 0;
   text-align: justify;
+  letter-spacing: 0px;
 }
+
+div.right-side {
+  display: grid;
+  grid-template-columns: 40px auto;
+}
+
+#mail-icon { margin-top: 45px; }
+#phone-icon { margin-top: 47px; }
+#email-icon { margin-top: 14px; }

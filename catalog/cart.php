@@ -46,7 +46,7 @@
 <!-- Output printing functions -->
 <?php
   function printEmptyCart() {
-    echo '<h1 class="common">YOUR CART IS EMPTY</h1>';
+    echo '<h1 class="common padded">YOUR CART IS EMPTY</h1>';
     echo '<div id="cart-empty" class="common subsection">';
     echo '<p class="cart-blurb common">No gadgets, gizmos, or gravity-defying gear — yet. Your cart\'s just waiting for a touch of ACME brilliance (or chaos) to get rolling. Browse our lineup of clever, curious, and questionably safe contraptions to spark your next big idea.</p>';
     echo '</div>';
@@ -54,7 +54,7 @@
   }
 
   function printCartContents() {
-    echo '<h1 class="common">YOUR CART</h1>';
+    echo '<h1 class="common padded">YOUR CART</h1>';
     echo '<div id="cart-detail" class="common subsection">';
     echo '<div class="left-side">';
     echo '<div id="cart-header">';

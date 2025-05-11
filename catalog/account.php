@@ -28,7 +28,7 @@
 
   <main>
   <section id="account" class="common height">
-    <h1 class="common">YOUR ACME JOURNEY CONTINUES HERE</h1>
+    <h1 class="common padded">YOUR ACME JOURNEY CONTINUES HERE</h1>
     <div id="your-account" class="common subsection">
      <p class="account-blurb common">This is your control center — where past plots live on and new ones begin. Browse your order history, brainstorm your next big idea, and remember: no genius ever played it safe. Whatever you're building, ACME's got your back. And if things go sideways (again), don't worry — we've seen worse. Probably.</p>
     </div>

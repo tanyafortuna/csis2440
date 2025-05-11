@@ -33,7 +33,7 @@
 
   <main>
     <section id="order-confirmation" class="common height">
-      <h1 class="common">THANK YOU FOR YOUR ORDER</h1>
+      <h1 class="common padded">THANK YOU FOR YOUR ORDER</h1>
       <div id="order-blurbs" class="common subsection">
         <p class="order-blurb common">You did it! Your order is locked, loaded, and being handled with the utmost care (and minimal explosions). Stay tuned — it's only a matter of time before it all arrives in glorious ACME fashion. Your next big scheme is officially in motion.</p>
         <p class="order-blurb common">As always, payment is due on delivery (brace yourself). Full details about your order are below — and saved to your order history for future scheming. Now all that's left is to prepare for impact and start plotting your next move.</p>

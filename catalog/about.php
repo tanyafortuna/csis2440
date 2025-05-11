@@ -27,7 +27,7 @@
 
   <main>
     <section id="about" class="common height">
-      <h1 class="common">IF IT'S ACME, IT'S A GASSER</h1>
+      <h1 class="common padded">IF IT'S ACME, IT'S A GASSER</h1>
       <div id="about-us" class="common subsection">
         <div class="left-side">
           <img src="img/poster.webp">
@@ -43,7 +43,7 @@
             Our commitment to quality is unmatched in the industry. Each product undergoes rigorous semi-controlled testing, often in the wild, and always with dramatic results. We're not just a brand — we're a legacy of animated ingenuity, trusted by coyotes, cats, ducks, and the occasional rabbit for nearly a century.
           </p>
           <p class="about-blurb">
-            With operations based firmly (and occasionally precariously) in the heart of the American desert, ACME continues to push the limits of physics, reason, and good taste. We don't just think outside the box—we catapult out of it.
+            With operations based firmly (and occasionally precariously) in the heart of the American desert, ACME continues to push the limits of physics, reason, and good taste. We don't just think outside the box — we catapult out of it.
           </p>
           <p class="about-blurb">
             So whether you're a seasoned schemer or a first-time inventor, welcome to ACME. Browse boldly. Operate carefully. And remember: results may vary.

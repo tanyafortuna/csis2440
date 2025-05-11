@@ -31,9 +31,9 @@
 
   <main>
     <section id="new-arrivals" class="common height">
-      <h1 class="common">NEW ARRIVALS</h1>
+      <h1 class="common padded">NEW ARRIVALS</h1>
       <p id="new-arrivals-blurb" class="common">Fresh from the lab and questionably approved, our newest ACME arrivals are here to shake up your toolkit — and possibly your surroundings. Browse the latest innovations in speed, surprise, and cartoon-grade chaos.</p>
-      <div id="new-products" class="common subsection">
+      <div id="new-products" class="common subsection four-products">
         <?php
           echo generateProductCard(13);
           echo generateProductCard(12);

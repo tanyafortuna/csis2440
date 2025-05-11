@@ -63,13 +63,13 @@
 <!-- Output-printing functions -->
 <?php
   function displaySuccess() {
-    echo '<h1 class="common">WELCOME ABOARD, ACME INSIDER</h1>';
+    echo '<h1 class="common padded">WELCOME ABOARD, ACME INSIDER</h1>';
     echo '<p class="login-blurb">You\'re now part of the ACME family. Big plans? Odd gadgets? Everything you need is just a click away.</p>';
     include_once("includes/ads.php");
   }
 
   function displayForm($acctExists) {
-    echo '<h1 class="common">INSIDER ACCESS STARTS HERE</h1>';
+    echo '<h1 class="common padded">INSIDER ACCESS STARTS HERE</h1>';
     if (!isset($_GET['pid'])) {
       echo '<p class="login-blurb">Create an account to quickly place orders and stay ready for whatever your next plan demands.</p>';
     }

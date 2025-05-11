@@ -27,7 +27,7 @@
 
   <main>
     <section id="contact" class="common height">
-      <h1 class="common">CONTACT US</h1>
+      <h1 class="common padded">CONTACT US</h1>
       <div id="contact-us" class="common subsection">
         <div class="left-side">
           <p class="contact-blurb">
@@ -38,18 +38,18 @@
           </p>
         </div>
         <div class="right-side">
-          <p class="contact-blurb">
-            <img class="icon" src="img/icons/mail.png"><br>
-            ACME Corporation Headquarters<br>1122 Cactus Loop Road<br>Tumbleweed Valley, NM 87001<br>United States
-          </p>
-          <p class="contact-blurb">
-            <img class="icon" src="img/icons/phone.png"><br>
-            1-800-HEY-ACME
-          </p>
-          <p class="contact-blurb">
-            <img class="icon" src="img/icons/email.png"><br>
-            support@acmecorp.com
-          </p>
+          <div class="right-side-icons">
+            <img class="icon" id="mail-icon" src="img/icons/mail.png">
+            <img class="icon" id="phone-icon" src="img/icons/phone.png">
+            <img class="icon" id="email-icon" src="img/icons/email.png">
+          </div>
+          <div class="right-side-text">
+            <p class="contact-blurb">
+              ACME Corporation Headquarters<br>1122 Cactus Loop Road<br>Tumbleweed Valley, NM 87001<br>United States
+            </p>
+            <p class="contact-blurb">1-800-HEY-ACME</p>
+            <p class="contact-blurb">support@acmecorp.com</p>
+          </div>
         </div>
       </div>
     </section>

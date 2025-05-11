@@ -42,7 +42,7 @@
 
   <main>
     <section id="login" class="common height">
-      <h1 class="common">WELCOME BACK, ACME INSIDER</h1>
+      <h1 class="common padded">WELCOME BACK, ACME INSIDER</h1>
       <?php
         if (!isset($_GET['pid'])) {
           echo '<p class="login-blurb">Sign in to place new orders, review past purchases, and stay one step ahead of the mayhem.</p>';
