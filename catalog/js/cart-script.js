@@ -1,6 +1,6 @@
-function removeItemFromCart(id) {
+async function removeItemFromCart(id) {
   // update session variable
-  fetch('includes/delete-cart-item-in-session.php', {
+  await fetch('includes/delete-cart-item-in-session.php', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ id: id, qty: 0 })
