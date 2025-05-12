@@ -121,7 +121,7 @@
     // Alerts
     echo '<div class="alerts">';
     echo '<p id="free-shipping-carrot">';
-    if (getCartSubtotal() < 999) {
+    if ((getCartSubtotal() - getCartDiscount()) < 999) {
       echo 'You\'re only <span>$';
       echo number_format(getFreeShippingCarrot(), 2);
       echo '</span> away from free delivery!';

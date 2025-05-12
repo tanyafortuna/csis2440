@@ -53,12 +53,15 @@ function updateCartPage(id, newQty, qtyChg) {
   let freeShipCarrot = document.getElementById("free-shipping-carrot");
 
   // get subtotal to see if page should be reloaded (subtotal = 0) 
-  let subtotal = formatNicely(
-    qtyChg * getNumFrom(itemPriceDiv.innerText) +
-    getNumFrom(cartSubtotalDiv.innerText)
-  );
+  let subtotal = qtyChg * getNumFrom(itemPriceDiv.innerText) +
+    getNumFrom(cartSubtotalDiv.innerText);
 
-  // do page update
+  // get discount to make the rest of the calcs easier
+  let discount = 0;
+  if (cartDiscountAmtDiv !== null)
+    discount = subtotal * getNumFrom(cartDiscountAmtDiv.innerText) / 100;
+
+  // do page refresh
   if (subtotal == 0)
     window.location.href = 'cart.php';
   // else update page
@@ -73,49 +76,16 @@ function updateCartPage(id, newQty, qtyChg) {
     }
 
     // update cart summary fields
-    // subtotal
-    cartSubtotalDiv.innerText = subtotal;
-
-    // discount
-    if (cartDiscountAmtDiv === null) {
-      cartDiscountDiv.innerText = formatNicely(
-        getCartDiscount(getNumFrom(cartSubtotalDiv.innerText), 0)
-      );
-    }
-    else {
-      cartDiscountDiv.innerText = formatNicely(
-        getCartDiscount(getNumFrom(cartSubtotalDiv.innerText),
-          cartDiscountAmtDiv.innerText)
-      );
-    }
-
-    // delivery
-    cartDeliveryDiv.innerText = formatNicely(
-      getCartShipping(getNumFrom(cartSubtotalDiv.innerText))
-    );
-
-    // tax
-    cartTaxDiv.innerText = formatNicely(
-      getCartTax(getNumFrom(cartSubtotalDiv.innerText))
-    );
-
-    // grand total
-    if (cartDiscountAmtDiv === null) {
-      cartTotalDiv.innerText = formatNicely(
-        getCartTotal(getNumFrom(cartSubtotalDiv.innerText), 0)
-      );
-    }
-    else {
-      cartTotalDiv.innerText = formatNicely(
-        getCartTotal(getNumFrom(cartSubtotalDiv.innerText),
-          cartDiscountAmtDiv.innerText)
-      );
-    }
+    cartSubtotalDiv.innerText = formatNicely(subtotal);
+    cartDiscountDiv.innerText = formatNicely(discount);
+    cartDeliveryDiv.innerText = formatNicely(getCartShipping(subtotal - discount));
+    cartTaxDiv.innerText = formatNicely(getCartTax(subtotal - discount));
+    cartTotalDiv.innerText = formatNicely(getCartTotal(subtotal - discount));
 
     // free shipping carrot
-    if (subtotal < 999) {
+    if (subtotal - discount < 999) {
       freeShipCarrot.innerHTML = "You're only <span>$" +
-        formatNicely(999 - subtotal) +
+        formatNicely(999 - (subtotal - discount)) +
         "</span> away from free delivery!";
     }
     else { freeShipCarrot.innerText = "You're getting free delivery!"; }
@@ -130,24 +100,17 @@ function formatNicely(n) {
   return n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
 
-function getCartDiscount(subtotal, discount) {
-  return subtotal * discount / 100;
-}
-
-function getCartShipping(subtotal) {
-  if (subtotal >= 999)
+function getCartShipping(num) {
+  if (num >= 999)
     return 0;
   else
-    return Math.max(5.99, subtotal * .05);
+    return Math.max(5.99, num * .05);
 }
 
-function getCartTax(subtotal) {
-  return subtotal * .07;
+function getCartTax(num) {
+  return num * .07;
 }
 
-function getCartTotal(subtotal, discount) {
-  return subtotal -
-    getCartDiscount(subtotal, discount) +
-    getCartShipping(subtotal) +
-    getCartTax(subtotal);
+function getCartTotal(num) {
+  return num + getCartShipping(num) + getCartTax(num);
 }
