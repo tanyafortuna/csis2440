@@ -14,9 +14,7 @@
   padding: 10px;
 }
 
-/*           */
 /* Left side */
-/*           */
 #cart-header-qty { text-align: center; }
 #cart-header-total { text-align: end; }
 
@@ -52,6 +50,7 @@
   padding-bottom: 1px;
   margin-right: 3px;
 }
+
 .remove-item {
   cursor: pointer;
   width: fit-content;
@@ -80,9 +79,7 @@
 
 .cart-item-price-total { text-align: end; }
 
-/*            */
 /* Right side */
-/*            */
 #summary-heading {
   height: 47px;
   padding: 10px;
@@ -101,9 +98,7 @@
 #summary-total div { font-size: 24px; }
 #summary-total span { font-size: 24px; }
 
-/*             */
 /* Alerts area */
-/*             */
 div.alerts {
   margin: 25px 0;
   text-align: center;
@@ -119,10 +114,7 @@ div.alerts {
   font-size: 14px;
 }
 
-
-/*                 */
 /* Promo code area */
-/*                 */
 #promo {
   margin: 30px 0;
   padding-top: 10px;

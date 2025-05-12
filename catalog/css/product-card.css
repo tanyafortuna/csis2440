@@ -1,3 +1,6 @@
+/*              */
+/* Product card */
+/*              */
 .product-card {
   width: 200px;
   height: 285px;
@@ -10,9 +13,7 @@
   transition: transform .1s;
   box-shadow:  0px 0px 5px #d1caaa;
 }
-.product-card:hover {
-  transform: scale(1.07);
-}
+.product-card:hover { transform: scale(1.07); }
 
 .product-img img {
   height: 180px;

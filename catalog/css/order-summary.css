@@ -1,9 +1,8 @@
 /*               */
 /* Order summary */
 /*               */
-.gapper {
-  border-top: 3px solid #d1caaa;
-}
+.gapper { border-top: 3px solid #d1caaa; }
+
 #order-summary {
   display: grid;
   grid-template-columns: 650px 275px;

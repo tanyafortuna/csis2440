@@ -1,7 +1,10 @@
+/*     */
+/* Nav */
+/*     */
+
 /* Promo line */
 #nav-promo {
   height: 40px;
-  /* background-color: #F2274C; */
   background-color: #F22233;
   color: white;
   display: grid;
@@ -13,9 +16,7 @@
   font-size: 16px;
   padding: 0 30px;
 }
-#promo-reviews span {
-  padding: 0 5px;
-}
+#promo-reviews span { padding: 0 5px; }
 #promo-shipping p {
   display: inline-block;
   width: 100%;
@@ -25,9 +26,7 @@
   font-size: 16px;
   letter-spacing: 2px;
 }
-#nav-promo .icon {
-  height: 20px;
-}
+#nav-promo .icon { height: 20px; }
 
 /* Logo line */
 #nav-logo {
@@ -41,17 +40,13 @@
   text-align: center;
   height: 110px;
 }
-#nav-logo-img img {
-  height: 110px;
-}
+#nav-logo-img img { height: 110px; }
 #nav-icons {
   display: flex;
   justify-content: flex-end;
   padding-right: 75px;
 }
-#nav-icons .icon {
-  height: 42px;
-}
+#nav-icons .icon { height: 42px; }
 
 /* Tooltips */
 .tooltip-container {

@@ -6,6 +6,7 @@ footer {
   height: 225px;
   padding: 28px 0 5px 0;
 }
+
 #footer-contents {
   width: 1000px;
   display: grid;
@@ -33,7 +34,6 @@ footer .footer-blurb, footer a {
 }
 footer .footer-blurb.gap { padding-bottom: 6px; }
 footer a:hover { text-decoration: underline; }
-
 
 footer .copyright { 
   text-align: center; 
