@@ -16,7 +16,7 @@ section#all-products a { width: fit-content; }
   padding-top: 3px;
 }
 #a-images {
-  width: 820px;
+  width: 870px;
   margin: 35px auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
