@@ -91,7 +91,7 @@
     echo '<input type="text" name="username" id="username" class="field" maxlength="20"';
     if (isset($_POST['submit'])) echo ' value="'.$_POST["username"].'"';
     echo '>';
-    echo '<img class="clear-icon" src="img/icons/clear.png" onclick="clearField(\'username\');">';
+    echo '<img class="clear-icon" src="img/icons/clear.png" onclick="clearField(\'username\');" alt="Clear icon">';
     echo '<p class="error-container" id="error-username">';
     if ($acctExists) echo 'Account already exists. Please log in.';
     echo '</p>';
@@ -102,7 +102,7 @@
     echo '<input type="password" name="password" id="password" class="field" maxlength="30"';
     if (isset($_POST['submit'])) echo ' value="'.$_POST["password"].'"';
     echo '>';
-    echo '<img class="clear-icon" src="img/icons/clear.png" onclick="clearField(\'password\');">';
+    echo '<img class="clear-icon" src="img/icons/clear.png" onclick="clearField(\'password\');" alt="Clear icon">';
     echo '<p class="error-container" id="error-password"></p>';
     echo '</div>';
     // Password field 2
@@ -111,7 +111,7 @@
     echo '<input type="password" name="password2" id="password2" class="field" maxlength="30"';
     if (isset($_POST['submit'])) echo ' value="'.$_POST["password2"].'"';
     echo '>';
-    echo '<img class="clear-icon" src="img/icons/clear.png" onclick="clearField(\'password2\');">';
+    echo '<img class="clear-icon" src="img/icons/clear.png" onclick="clearField(\'password2\');" alt="Clear icon">';
     echo '<p class="error-container" id="error-password2"></p>';
     echo '</div>';
     // Submit button

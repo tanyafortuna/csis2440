@@ -58,7 +58,7 @@
         <div class="right-side">
           <h1 class="name"><?php echo strtoupper($product['name']); ?></h1>
           <p class="reviews-count">
-            <img class="icon" src="img/icons/star-full.png"><img class="icon" src="img/icons/star-full.png"><img class="icon" src="img/icons/star-full.png"><img class="icon" src="img/icons/star-full.png"><img class="icon" src="img/icons/star-full.png">
+            <img class="icon" src="img/icons/star-full.png" alt="Star icon"><img class="icon" src="img/icons/star-full.png" alt="Star icon"><img class="icon" src="img/icons/star-full.png" alt="Star icon"><img class="icon" src="img/icons/star-full.png" alt="Star icon"><img class="icon" src="img/icons/star-full.png" alt="Star icon">
             23 Reviews
           </p>
           <p class="price">$<?php echo number_format($product['price'], 2); ?></p>
@@ -69,13 +69,13 @@
                 <p id="qty">Qty:</p>
                 <div id="qty-minus-plus">
                   <div id="qty-minus" onclick="updateProductPageQty(false);">
-                    <img class="icon" src="img/icons/minus.png">
+                    <img class="icon" src="img/icons/minus.png" alt="Minus icon">
                   </div>
                   <div id="qty-count">
                     1
                   </div>
                   <div id="qty-plus" onclick="updateProductPageQty(true);">
-                    <img class="icon" src="img/icons/plus.png">
+                    <img class="icon" src="img/icons/plus.png" alt="Plus icon">
                   </div>
                 </div>
               </div>

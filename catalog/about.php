@@ -30,7 +30,7 @@
       <h1 class="common padded">IF IT'S ACME, IT'S A GASSER</h1>
       <div id="about-us" class="common subsection">
         <div class="left-side">
-          <img src="img/poster.webp">
+          <img src="img/poster.webp" alt="A red poster filled with numerous ACME inventions">
         </div>
         <div class="right-side">
           <p class="about-blurb">

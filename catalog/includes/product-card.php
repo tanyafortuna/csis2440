@@ -8,7 +8,7 @@
     $output .= '<div class="product-img">';
     $output .= '<img src="';
     $output .= $product['image'];
-    $output .= '">';
+    $output .= '" alt="Product image">';
     $output .= '</div>';
     $output .= '<div class="product-details">';
     $output .= '<p class="product-name">';

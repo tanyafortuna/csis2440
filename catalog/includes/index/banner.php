@@ -1,7 +1,7 @@
 <?php
   echo '<section id="banner">';
   echo '<div id="acme-hq-banner-container">';
-  echo '<img id="acme-hq-banner" src="img/acme-corp-hq-cropped2.jpeg">';
+  echo '<img id="acme-hq-banner" src="img/acme-corp-hq-cropped2.jpeg" alt="A picture of the front of the ACME warehouse">';
   echo '</div>';
   echo '<div id="banner-overlay">';
   echo '<p id="quality-products">QUALITY PRODUCTS<br>SINCE 1935</p>';

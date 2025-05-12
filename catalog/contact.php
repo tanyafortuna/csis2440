@@ -39,9 +39,9 @@
         </div>
         <div class="right-side">
           <div class="right-side-icons">
-            <img class="icon" id="mail-icon" src="img/icons/mail.png">
-            <img class="icon" id="phone-icon" src="img/icons/phone.png">
-            <img class="icon" id="email-icon" src="img/icons/email.png">
+            <img class="icon" id="mail-icon" src="img/icons/mail.png" alt="Main icon">
+            <img class="icon" id="phone-icon" src="img/icons/phone.png" alt="Phone icon">
+            <img class="icon" id="email-icon" src="img/icons/email.png" alt="Email icon">
           </div>
           <div class="right-side-text">
             <p class="contact-blurb">

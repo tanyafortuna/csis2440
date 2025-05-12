@@ -173,13 +173,13 @@
     $product = getProductFromDB($id);
 
     echo '<div class="cart-item common-border-bottom" id="cart-item-'.$id.'">';
-    echo '<img class="cart-item-img" src="'.$product['image'].'">';
+    echo '<img class="cart-item-img" src="'.$product['image'].'" alt="Product image">';
 
     echo '<div class="cart-item-name">';
     echo '<p class="top">'.$product['name'].'</p>';
     echo '<div class="remove-item" onclick="removeItemFromCart('.$id.');">';
     echo '<p class="bottom" id="remove-item-'.$id.'">';
-    echo '<img class="icon" src="img/icons/delete.png">';
+    echo '<img class="icon" src="img/icons/delete.png" alt="Delete icon">';
     echo '<span>Remove item</span></p>';
     echo '</div>';
     echo '</div>';
@@ -191,11 +191,11 @@
 
     echo '<div class="cart-item-qty">';
     echo '<div id="qty-minus" onclick="updateCartItemQty(false, '.$id.');">';
-    echo '<img class="icon" src="img/icons/minus.png">';
+    echo '<img class="icon" src="img/icons/minus.png" alt="Minus icon">';
     echo '</div>';
     echo '<div id="qty-count-'.$id.'">'.$qty.'</div>';
     echo '<div id="qty-plus" onclick="updateCartItemQty(true, '.$id.');">';
-    echo '<img class="icon" src="img/icons/plus.png">';
+    echo '<img class="icon" src="img/icons/plus.png" alt="Plus icon">';
     echo '</div>';
     echo '</div>';
 

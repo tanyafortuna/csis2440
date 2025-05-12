@@ -62,7 +62,7 @@
             <input type="text" name="username" id="username" class="field" maxlength="20"
               <?php if (isset($_POST['submit'])) echo ' value="'.$_POST["username"].'"'; ?>
             >
-            <img class="clear-icon" src="img/icons/clear.png" onclick="clearField('username');">
+            <img class="clear-icon" src="img/icons/clear.png" onclick="clearField('username');" alt="Clear icon">
             <p class="error-container" id="error-username"></p>
           </div>
           <div class="input">
@@ -70,7 +70,7 @@
             <input type="password" name="password" id="password" class="field" maxlength="30"
               <?php if (isset($_POST['submit'])) echo ' value="'.$_POST["password"].'"'; ?>
             >
-            <img class="clear-icon" src="img/icons/clear.png" onclick="clearField('password');">
+            <img class="clear-icon" src="img/icons/clear.png" onclick="clearField('password');" alt="Clear icon">
             <p class="error-container" id="error-password">
               <?php echo $error; ?>
             </p>
